@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+<title>Danny Gould</title>
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" type="text/css" href="assets/style.css">
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<header>
+	<div class="title-area floating">
+		<a href="http://dannygould.com/">
+			<img src="assets/img/dannygould.png" title="Danny Gould" alt="Danny Gould">
+		</a>
+	</div>
+
+	<nav>
+		<ul>
+			<li ui-sref-active="active"><a href ui-sref="work">Work</a></li>
+			<li ui-sref-active="active"><a href ui-sref="profile" >Profile</a></li>
+			<li ui-sref-active="active"><a href ui-sref="contact">Contact</a></li>
+		</ul>
+	</nav>
+</header>
+
+<div class="content">
+<section id="intro" class="copy">
+	<div class="intro__content">
+		<h1 class="intro__title">Hi there, I&rsquo;m Danny Gould</h1>
+		<h2>I&rsquo;m a Boston area creative developer. Software is my medium.</h2>
+	</div>
+</section>
+<section id="work">
+	<div class="row">
+	<div class="project-card">
+		<img src="assets/img/whowhatwhen.png">
+		<h3>WhoWhatWhen</h3>
+		<a href="http://whowhatwhen.co" target="_blank" class="site-link">visit website</a>
+	</div>
+	<div class="project-card">
+		<img src="assets/img/tonygeiger.jpg">
+		<h3>Tony Geiger</h3>
+		<a href="http://tonygeiger.com" target="_blank" class="site-link">visit website</a>
+	</div>
+	</div>
+	<div class="row">
+	<div class="project-card">
+		<img src="assets/img/brookfieldfd.jpg">
+		<h3>Brookfield Fire Department</h3>
+		<a href="http://brookfieldfd.com" target="_blank" class="site-link">visit website</a>
+	</div>
+	<div class="project-card">
+		<img src="assets/img/trovadesignconsultants.jpg">
+		<h3>Trova Design Consultants</h3>
+		<a href="http://trovadesign.com" target="_blank" class="site-link">visit website</a>
+	</div>
+	</div>
+</section>
+<section id="contact" class="copy">
+	<h3>Contact me</h3>
+	<pre class="business-card">
+<span class="linenum">0</span>  <span class="string">"contact"</span> <span class="bracket">{</span>
+<span class="linenum">1</span>    <span class="string">"email"</span> : <span class="string">"<a href="mailto:dan@dannygould.com">dan@dannygould.com</a>"</span>,
+<span class="linenum">2</span>    <span class="string">"phone"</span> : <span class="string">"(508) 296-8090"</span>
+<span class="linenum">4</span>  <span class="bracket">}</span>
+</pre>
+</section>	
+
+</div>
+
+<footer>
+	&copy; Daniel Gould. All rights reserved.
+</footer>
+</body>
+</html>
