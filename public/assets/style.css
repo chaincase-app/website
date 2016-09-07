@@ -177,6 +177,7 @@ pre {
 	}	
 
 	.contact-card {
+		-webkit-margin-bottom-collapse: separate;
 		margin-bottom: 40px;
 	}
 
