@@ -2,6 +2,11 @@
 Stylesheet for Daniel Gould
 */
 
+/* color constants
+ * bg: #fbfef9
+ * black: #171123
+ */
+
 * {
 	transition: .15s ease-in;
 	-webkit-transition: .15s ease-in;
@@ -21,8 +26,8 @@ html, body {
 }
 
 body {
-	color: #262323;
-	background-color: #fff;
+	color: #171123;
+	background-color: #fbfef9;
 }
 
 header {
@@ -30,13 +35,20 @@ header {
 }
 
 
-section {
-	margin: 0 80px 0 80px;
-	min-height: 100vh;
+#intro {
+	min-height: calc(100vh - 80px);
 }
 
-section h1,
-section h2 {
+#work h1 {
+	margin: 0 auto 40px auto;
+}
+
+section {
+	margin: 0 80px 80px 80px;
+}
+	
+h1,
+h2 {
 	font-size: 60px;
 	margin-top: 8px;
 }
@@ -49,14 +61,10 @@ section h2 {
 
 
 .project-card {
-	border-radius: 8px;
 	overflow: hidden;
 	max-width: 700px;
 	margin: 0 auto;
-	margin-bottom: 5%;
-	-webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75); 
-	-moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75); 
-	box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+	margin-bottom: 40px;
 }
 
 .project-card:hover {
@@ -78,13 +86,13 @@ section h2 {
 	float: right;
 }
 
-.project-card h3,
-.project-card .site-link {
-	padding: 0 8px 0 8px;
+.project-card__caption {
+	padding: 8px;
 }
 
 
 @media (min-width: 1200px) {
+
 	.row {
 		display: flex;
 		justify-content: space-between;
@@ -92,9 +100,15 @@ section h2 {
 		margin: 0 auto;
 	}
 	.project-card {
-		width: 49%;
-		margin-bottom: 1%;
+		width: calc(50% - 20px);
+		margin-bottom: 40px;
 	}
+}
+
+.contact-card {
+	border: solid 8px #fbfef9;
+	max-width: 400px;
+	margin: 0 auto 20px;
 }
 
 a {
@@ -104,61 +118,15 @@ a {
 
 a:hover,
 .active a {
-	color: #EA5F27;
+	color: #372238;
 }
-
-/*
-Header and Navigation
-*/
-
-header {
-	height: 80px;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	z-index: 10;	
-	background-color: #fff;
-}
-
-nav {
-	display: inline-block;
-	float: right;
-	padding-top: 30px;
-	padding-right: 20px;
-}
-
-nav ul {
-	padding-left: 0;
-	list-style-type: none;
-}
-
-nav li {
-	display: inline;
-	padding-left: 20px;
-}
-
-nav ul a{
-	margin-top: 20px;
-	font-size: 16px;
-	text-decoration: none;
-}
-
-.title-area {
-	padding-top: 5px;
-	padding-left: 20px;
-	float: left;
-}
-
-
 
 /*
 footer
 */
 
 code,
-pre {
-	background: #eee;
-	color: #ccc;
+pre { background: #eee; color: #ccc;
 	border-bottom: 1px solid #d8dee9;
 }
 
@@ -184,23 +152,35 @@ pre {
 	color: #fff;
 }
 
-
-footer {
-	margin: 0 auto;
-	padding-top: 35px;
-	padding-bottom: 35px;
-	font-weight: 200;
-	font-size: 11px;
-	text-align: center;
+/* tablet / small screen */
+@media (max-width: 1080px) {
+	h1, h2 {
+		font-size: 40px;
+	}
 }
 
-@media screen and (max-width: 767px) {
-
-	nav li a{
-		font-size: 18px;
+/* phones */
+@media (max-width: 600px) {
+	h1, h2 {
+		font-size: 32px;
+	}
+	html, body {
+		font-size: 11px;
 	}
 
+	.intro__content {
+		padding-top: 20vh;
+	}
+	#intro { 
+		min-height: calc(100vh - 20px);
+	}	
+	section {
+		margin: 0 20px 20px 20px;
+	}
 }
+
+
+
 
 @font-face {
 	font-family: 'League Spartan';
