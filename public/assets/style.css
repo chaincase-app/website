@@ -108,7 +108,7 @@ h2 {
 .contact-card {
 	border: solid 8px #fbfef9;
 	max-width: 400px;
-	margin: 0 auto 20px;
+	margin: 0 auto;
 }
 
 a {
@@ -171,9 +171,15 @@ pre {
 	.intro__content {
 		padding-top: 20vh;
 	}
+
 	#intro { 
 		min-height: calc(100vh - 20px);
 	}	
+
+	.contact-card {
+		margin-bottom: 40px;
+	}
+
 	section {
 		margin: 0 20px 20px 20px;
 	}
