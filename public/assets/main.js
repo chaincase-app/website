@@ -13,26 +13,30 @@ var openProject = function() {
 			$(this).css('display', 'none');
 		})
 
-	// add closeProject listener to !.project-card elements
+	// add closeProject listener to !.project-card--expanded elements
 	$(document).click(function(event) {
 		if(!$(event.target).closest($('.project-card--expanded')).length || $(event.target).closest($('.cancel')).length) {
 			closeProject();
 		}
 	})
-	//TODO add x to close to dom
+
+	//TODO add x to close to DOM
 	$(this).append('<div class="cancel"></div>');
 }
 
 //TODO delete FAB
 var closeProject = function() {
+	// remove whole document listener
+	$(document).off('click');
+	// remove cancel button from DOM
 	$('div').remove('.cancel');
 	$('#'+expanded).removeClass('project-card--expanded');
+	// display hidden elements
 	$('.project-card:not(#'+ expanded + ')')
 		.each(function () {
 			$(this).css('display', 'block');
 		})
 
 	expanded = false;
-
 }
 
