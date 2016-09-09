@@ -20,7 +20,7 @@ Stylesheet for Daniel Gould
 
 html, body {
 	font-family: 'League Spartan', Verdana, Helvetica, Arial, sans-serif;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 400;
 	height: 100%;
 }
@@ -73,6 +73,25 @@ h2 {
 	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
 }
 
+.project-card--expanded {
+	opacity: 1.0 !important;
+	max-width: 100%;
+	width: 700px;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	background: #fbfef9;
+	-webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75); 
+	-moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75); 
+	box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75);
+}
+
+.project-card--expanded .project-card__description {
+	height: initial;
+}
+
+
 .project-card img {
 	width: 100%;
 	height: auto;
@@ -83,11 +102,39 @@ h2 {
 }
 
 .project-card .site-link {
+	font-family: monospace;
 	float: right;
+}
+
+.project-card__description {
+	height: 0;
+	overflow: hidden;
+	font-family: monospace;
+}
+
+.project-card__description p {
+	margin: 0 10px 10px 10px;
 }
 
 .project-card__caption {
 	padding: 8px;
+}
+
+.project-card__technologies {
+	margin: 20px 0 20px;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.project-card__technologies li {
+	list-style-type: none;
+	background: #995ec9;
+	color: #fbfef9;
+	border-radius: 4px;
+	padding: 4px 8px 4px 8px;
+	margin: 4px
 }
 
 
@@ -99,7 +146,7 @@ h2 {
 		width: 100%;
 		margin: 0 auto;
 	}
-	.project-card {
+	.project-card-wrap {
 		width: calc(50% - 20px);
 		margin-bottom: 40px;
 	}
@@ -149,7 +196,7 @@ pre {
 }
 
 .linenum {
-	color: #fff;
+	color: #fbfef9;
 }
 
 /* tablet / small screen */

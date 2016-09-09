@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" type="text/css" href="assets/style.css">
 <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-<link href='http://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="assets/main.js"></script>
 </head>
 <body>
 <header>
@@ -28,42 +29,134 @@
 <section id="intro" class="copy">
 	<div class="intro__content">
 		<h1 class="intro__title">Hi there, I&rsquo;m Danny Gould,</h1>
-		<h2>a Boston area creative developer. Software is my medium.</h2>
+		<h2>a Boston area creative developer.</h2>
+		<h2>Software is my medium.</h2>
 	</div>
 </section>
 <section id="work">
 	<h1>My past work:</h1>
 	<div class="row">
-	<div class="project-card">
-		<img src="assets/img/whowhatwhen.png">
-		<div class="project-card__caption">
-			<h3>WhoWhatWhen</h3>
-			<a href="http://whowhatwhen.co" target="_blank" class="site-link">visit site</a>
+		<div id="www-card" class="project-card">
+			<img src="assets/img/whowhatwhen.png">
+			<div class="project-card__caption">
+				<h3>WhoWhatWhen</h3>
+				<a href="http://whowhatwhen.co" target="_blank" class="site-link">visit site</a>
+				<div class="project-card__description">
+					<ul class="project-card__technologies">
+						<li>JavaScript</li>
+						<li>Node.js</li>
+						<li>AngularJS (1.x)</li>
+						<li>WebSockets</li>
+						<li>MongoDB</li>
+						<li>HTML</li>
+						<li>SCSS</li>
+						<li>Gulp</li>
+						<li>Git</li>
+						<li>Responsive Design</li>
+					</ul>
+					<p>
+					This is a responsive web application with a focus on visual organization of tasks.
+					I focus on modern web development best practices on both the front and back ends.
+					As the sole developer on this project and am looking to grow and learn
+					while building a maintainable code.	
+					</p>
+					<p>
+					<strong>Challenges:</strong><br>
+					This is the most involved project I have worked on to date. The project consists
+					of a NodeJS app which communicates between concurrent clients and a database. The project
+					features real-time collaboration. I am responsible for the development, implementation
+					of design, system administration, analytics, and marketing for this project. Performance is a great focus
+					in this project to make the provide the best user experience.
+					</p>
+				</div>
+			</div>
 		</div>
-	</div>
-	<div class="project-card">
-		<img src="assets/img/tonygeiger.jpg">
-		<div class="project-card__caption">
-			<h3>Tony Geiger</h3>
-			<a href="http://tonygeiger.com" target="_blank" class="site-link">visit site</a>
+		<div id="tonygeiger-card" class="project-card">
+			<img src="assets/img/tonygeiger.jpg">
+			<div class="project-card__caption">
+				<h3>Tony Geiger</h3>
+				<a href="http://tonygeiger.com" target="_blank" class="site-link">visit site</a>
+				<div class="project-card__description">
+					<ul class="project-card__technologies">
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>PHP</li>
+						<li>Responsive</li>
+						<li>WordPress</li>
+					</ul>
+					<p>
+					This is a simple, budget-oriented, rapidly constructed portfolio website for a unique
+					visual artist from New York. It is a good example of a simple client site
+					which the owner can maintain on their own while utilizing my design and
+					development skills to adjust an off-the-shelf WordPress theme to an individual's needs
+					</p>
+					<p>
+					<strong>Challenges:</strong><br>
+					Tony had all of his content and ideas ready before we began development which made the
+					process simple. All alterations needed to stay mobile-responsive and look good
+					on a desktop computer as the original theme did. Large photos needed to be compressed to improve
+					performance of the site.
+					Tony's preparation of content and clear idea of budget from the outset fostered a successful outcome.
+					</p>
+				</div>
+			</div>
 		</div>
-	</div>
 	</div>
 	<div class="row">
-	<div class="project-card">
-		<img src="assets/img/brookfieldfd.jpg">
-		<div class="project-card__caption">
-			<h3>Brookfield Fire Department</h3>
-			<a href="http://brookfieldfd.com" target="_blank" class="site-link">visit site</a>
+		<div id="bfd-card" class="project-card">
+			<img src="assets/img/brookfieldfd.jpg">
+			<div class="project-card__caption">
+				<h3>Brookfield Fire Department</h3>
+				<a href="http://brookfieldfd.com" target="_blank" class="site-link">visit site</a>
+				<div class="project-card__description">
+					<ul class="project-card__technologies">
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>Responsive</li>
+						<li>JavaScript</li>
+						<li>PHP</li>
+						<li>WordPress</li>
+					</ul>
+					<p>
+					This is a responsive WordPress website built to fit the changing needs of my local
+					fire department. The chief can now post images and stories as well as other event
+					updates to the site on his own without the need for a webmaster. The custom theme
+					fits the departments aesthetic. The site enables integration of published posts with
+					the departments popular Facebook page. It was built on volunteer hours as my Eagle Scout
+					Service project.
+					</p>
+					<p>
+					<strong>Challenges:</strong><br>
+					Because of the nature of the service project, I had to incorporate
+					copy, visual, and software comonents created by youth and adult volunteers. This involved
+					educating volunteers about web practices and technologies as well as communicating with the town and department to meet their needs.  </p>
+				</div>
+			</div>
 		</div>
-	</div>
-	<div class="project-card">
-		<img src="assets/img/trovadesignconsultants.jpg">
-		<div class="project-card__caption">
-			<h3>Trova Design Consultants</h3>
-			<a href="http://trovadesign.com" target="_blank" class="site-link">visit site</a>
+		<div id="tdc-card" class="project-card">
+			<img src="assets/img/trovadesignconsultants.jpg">
+			<div class="project-card__caption">
+				<h3>Trova Design Consultants</h3>
+				<a href="http://trovadesign.com" target="_blank" class="site-link">visit site</a>
+				<div class="project-card__description">
+					<ul class="project-card__technologies">
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>Responsive</li>
+						<li>JavaScript</li>
+						<li>PHP</li>
+						<li>WordPress</li>
+					</ul>
+					<p>
+					This is a responsive WordPress website built quickly and inexpensively for a small business in the Berkshires. I was responsible for design, graphics, and development of the site. The site was built to serve the needs of a small CAD shop and allow them to update their own content.
+					</p>
+					<p>
+					<strong>Challenges:</strong><br>
+					I was not very familiar with CSS during this project, so I struggeled to lay out things centered and create a mobile responsive design. I gained a lot of familiarity with the language through this project and also learned how to alter some basic PHP to add functionality like the contact form.
+					</p>
+				</div>
+			</div>
 		</div>
-	</div>
 	</div>
 </section>
 <section id="contact" class="copy">
