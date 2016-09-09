@@ -64,8 +64,7 @@ h2 {
 	position: relative;
 	overflow: hidden;
 	max-width: 700px;
-	margin: 0 auto;
-	margin-bottom: 40px;
+	margin: 0 auto 40px auto;
 }
 
 .project-card:hover {
@@ -166,6 +165,11 @@ h2 {
 		width: 100%;
 		margin: 0 auto;
 	}
+
+	.project-card {
+		max-width: calc(50% - 10px);
+	}
+
 	.project-card-wrap {
 		width: calc(50% - 20px);
 		margin-bottom: 40px;
