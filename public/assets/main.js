@@ -1,6 +1,7 @@
 window.onload = function() {
 	$('.project-card').click(openProject);
 }
+
 var expanded = false;
 var openProject = function() {
 	expanded = this.id;
@@ -12,17 +13,19 @@ var openProject = function() {
 			$(this).css('display', 'none');
 		})
 
-	// add closeProject listener to outside
+	// add closeProject listener to !.project-card elements
 	$(document).click(function(event) {
-		if(!$(event.target).closest($('.project-card--expanded')).length) {
+		if(!$(event.target).closest($('.project-card--expanded')).length || $(event.target).closest($('.cancel')).length) {
 			closeProject();
 		}
 	})
-	// stops close if is expanded card
+	//TODO add x to close to dom
+	$(this).append('<div class="cancel"></div>');
 }
 
-//TODO
+//TODO delete FAB
 var closeProject = function() {
+	$('div').remove('.cancel');
 	$('#'+expanded).removeClass('project-card--expanded');
 	$('.project-card:not(#'+ expanded + ')')
 		.each(function () {
