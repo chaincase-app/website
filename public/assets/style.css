@@ -30,13 +30,11 @@ body {
 	background-color: #fbfef9;
 }
 
-header {
-	display: none;
-}
 
 
 #intro {
 	min-height: calc(100vh - 80px);
+	position: relative;
 }
 
 #work h1 {
@@ -53,8 +51,22 @@ h2 {
 	margin-top: 8px;
 }
 
+#physCanvas {
+	z-index: 0;
+	position: absolute;
+}
+
 .intro__content {
+	z-index: 1;
+	position: absolute;
+	pointer-events: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale'); background: none !important;
 	padding-top: 30vh;
+}
+
+.intro__content h1,
+.intro__content h2 {
+	display: inline-block;
 }
 
 /* project cards */
