@@ -54,6 +54,7 @@ h2 {
 #physCanvas {
 	z-index: 0;
 	position: absolute;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 .intro__content {
