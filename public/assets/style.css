@@ -68,6 +68,11 @@ h2 {
 .intro__content h1,
 .intro__content h2 {
 	display: inline-block;
+	text-shadow: 
+	 -1px -1px 0 #fbfef9,
+	 1px -1px 0 #fbfef9,
+	 -1px 1px 0 #fbfef9,
+	 1px 1px 0 #fbfef9;
 }
 
 /* project cards */
