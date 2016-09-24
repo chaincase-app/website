@@ -2,6 +2,7 @@ window.onload = function() {
 	$('.project-card').click(openProject);
 }
 
+
 var expanded = false;
 var openProject = function() {
 	expanded = this.id;

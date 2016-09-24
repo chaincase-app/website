@@ -37,6 +37,91 @@ body {
 	position: relative;
 }
 
+#intro::selection,
+#intro::-moz-selection {
+	rgba(0,0,0,0);
+}
+
+.pulse {
+	position: absolute;
+	z-index: 0;
+}
+
+.pulse-dot {
+	position: relative;
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border: 5px solid rgba(103,120,193,.81);
+	background-color: rgba(114,116,191,.42);
+}
+
+.pulse-ring {
+	position: absolute;
+	display: block;
+	background: 0 0;
+	width: 64px;
+	height: 64px;
+	border: 10px solid rgba(114,117,191,.38);
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	animation: pulse 3s ease-out;
+	-webkit-animation: pulse 3s ease-out infinite;
+	-moz-animation: pulse 3s ease-out infinite;
+	animation-iteration-count: infinite;
+	top: -32px;
+	left: -32px;
+}
+
+@-moz-keyframes pulse {
+0% {
+	-moz-transform: scale(0);
+	opacity: 0.0;
+}
+25% {
+	-moz-transform: scale(0);
+	opacity: 0.1;
+}
+50% {
+	-moz-transform: scale(0.1);
+	opacity: 0.3;
+}
+75% {
+	-moz-transform: scale(0.5);
+	opacity: 0.5;
+}
+100% {
+	-moz-transform: scale(1);
+	opacity: 0.0;
+}
+}
+
+@-webkit-keyframes pulse {
+0% {
+	-webkit-transform: scale(0);
+	opacity: 0.0;
+}
+25% {
+	-webkit-transform: scale(0);
+	opacity: 0.1;
+}
+50% {
+	-webkit-transform: scale(0.1);
+	opacity: 0.3;
+}
+75% {
+	-webkit-transform: scale(0.5);
+	opacity: 0.5;
+}
+100% {
+	-webkit-transform: scale(1);
+	opacity: 0.0;
+}
+}
 #work h1 {
 	margin: 0 auto 40px auto;
 }
@@ -52,13 +137,13 @@ h2 {
 }
 
 #physCanvas {
-	z-index: 0;
+	z-index: 1;
 	position: absolute;
 	-webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 .intro__content {
-	z-index: 1;
+	z-index: 2;
 	position: absolute;
 	pointer-events: none;
 	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale'); background: none !important;

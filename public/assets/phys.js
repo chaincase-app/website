@@ -75,7 +75,7 @@ function init() {
 	  // Check if the cursor is inside the box
 	  var hitBodies = world.hitTest(position, boxBodies);
 
-	  if(hitBodies.length){
+	  if(hitBodies.length) {
 
 		// Move the mouse body to the cursor position
 		mouseBody.position[0] = position[0];
@@ -90,6 +90,10 @@ function init() {
 		world.addConstraint(mouseConstraint);
 	  } else {
 		  addBox([position[0], position[1]]);
+		  // if 3 heads or more
+		  if (world.bodies.length === 7) {
+			$('div').remove('.pulse');
+		  }
 	  }
 	});
 
@@ -120,7 +124,6 @@ function addBox(position) {
 	   	[28,-44],
 	   	[48,-16]
 	]
-	//circleShape = new p2.Circle({radius: 100});
 	convexShape = new p2.Convex({vertices: vertices})
 	boxBodies.push(new p2.Body({
 		mass:1,
@@ -129,16 +132,6 @@ function addBox(position) {
 	}));
 	boxBodies[boxBodies.length - 1].addShape(convexShape);
 	world.addBody(boxBodies[boxBodies.length - 1]);
-	/*
-	boxShape = new p2.Box({ width: 20, height: 40 });
-	boxBodies.push(new p2.Body({
-		mass:1,
-		position:position,
-		angularVelocity:1
-	}));	
-	boxBodies[boxBodies.length - 1].addShape(new p2.Box({width:20, height:40}));
-	world.addBody(boxBodies[boxBodies.length - 1]);
-	*/
 }
 
 
