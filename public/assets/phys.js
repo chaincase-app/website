@@ -8,7 +8,7 @@ var canvas,
 	ceilingBody, 
 	rightWallBody, 
 	leftWallBody,
-   	mouseConstraint,
+  mouseConstraint,
 	mouseBody;
 
 var boxBodies = [];
@@ -88,6 +88,7 @@ function init() {
 		  collideConnected:false
 		});
 		world.addConstraint(mouseConstraint);
+    console.log(world);
 	  } else {
 		  addBox([position[0], position[1]]);
 		  // if 3 heads or more
@@ -136,7 +137,10 @@ function addBox(position) {
 
 
 function removeMouseConstraint(event) {
-	world.removeConstraint(mouseConstraint);
+  // remove all in case mouse up happens off screen
+  world.constraints.forEach(function(constraint) {
+    world.removeConstraint(constraint);
+  })
 	mouseConstraint = null;
 }
 
