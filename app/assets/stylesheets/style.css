@@ -375,12 +375,12 @@ pre {
 
 @font-face {
 	font-family: 'League Spartan';
-	src: url('leaguespartan-bold.eot');
-	src: url('leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
-		url('leaguespartan-bold.woff2') format('woff2'),          
-		url('leaguespartan-bold.woff') format('woff'),          
-		url('leaguespartan-bold.ttf') format('truetype'),          
-		url('leaguespartan-bold.svg#league_spartanbold') format('svg');
+	src: image-url('../fonts/leaguespartan-bold.eot');
+	src: image-url('../fonts/leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
+		image-url('../fonts/leaguespartan-bold.woff2') format('woff2'),          
+		image-url('../fonts/leaguespartan-bold.woff') format('woff'),          
+		image-url('../fonts/leaguespartan-bold.ttf') format('truetype'),          
+		image-url('../fonts/leaguespartan-bold.svg#league_spartanbold') format('svg');
 	font-weight: bold;
 	font-style: normal;
 }
