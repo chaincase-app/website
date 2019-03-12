@@ -30,8 +30,6 @@ body {
 	background-color: #fbfef9;
 }
 
-
-
 #intro {
 	min-height: calc(100vh - 80px);
 	position: relative;
@@ -135,6 +133,11 @@ h2 {
 	font-size: 60px;
 	margin-top: 8px;
 }
+
+h2 {
+  margin-bottom: 20px;
+}
+
 
 #physCanvas {
 	z-index: 1;
