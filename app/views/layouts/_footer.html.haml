@@ -1,0 +1,32 @@
+%footer#contact.copy
+  %h2 Say "Hello!"
+  %pre.contact-card
+    %span.linenum 0
+    %span.string "contact"
+    %span.bracket {
+    %span.linenum 1
+    %span.string "email"
+    \:
+    = succeed "," do
+      %span.string
+        "
+        %a{:href => "mailto:dan@dannygould.com"}> dan@dannygould.com
+        "
+    %span.linenum 2
+    %span.string "github"
+    \:
+    = succeed "," do
+      %span.string
+        "
+        %a{:href => "http://github.com/dangould", :target => "_blank"}> github.com/dangould
+        "
+    %span.linenum 3
+    %span.string "phone"
+    \:
+    %span.string "(508) 296-8090"
+    %span.linenum 4
+    %span.string "LTC"
+    \:
+    %span.string "LenRXJry4wV8fatqxefCwSzGKYWHbL6ENH"
+    %span.linenum 5
+    %span.bracket }
