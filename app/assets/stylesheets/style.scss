@@ -37,7 +37,7 @@ body {
 
 #intro::selection,
 #intro::-moz-selection {
-	rgba(0,0,0,0);
+	background: rgba(0,0,0,0);
 }
 
 .pulse {
@@ -370,17 +370,14 @@ pre {
 	}
 }
 
-
-
-
 @font-face {
 	font-family: 'League Spartan';
-	src: image-url('../fonts/leaguespartan-bold.eot');
-	src: image-url('../fonts/leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
-		image-url('../fonts/leaguespartan-bold.woff2') format('woff2'),          
-		image-url('../fonts/leaguespartan-bold.woff') format('woff'),          
-		image-url('../fonts/leaguespartan-bold.ttf') format('truetype'),          
-		image-url('../fonts/leaguespartan-bold.svg#league_spartanbold') format('svg');
+	src:font-url('leaguespartan-bold.eot');
+	src:font-url('leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
+		font-url('leaguespartan-bold.woff2') format('woff2'),          
+		font-url('leaguespartan-bold.woff') format('woff'),          
+		font-url('leaguespartan-bold.ttf') format('truetype'),          
+		font-url('leaguespartan-bold.svg#league_spartanbold') format('svg');
 	font-weight: bold;
 	font-style: normal;
 }
