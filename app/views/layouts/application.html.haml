@@ -6,10 +6,10 @@
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = favicon_link_tag 'favicon.ico'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'
     = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/p2.js/0.7.1/p2.js'
-  %body
-    = yield
-
-    = render 'layouts/footer'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload', defer: 'defer'
+  %body{class: "#{controller_name} #{action_name}"}
+    .content
+      = yield
+      = render 'layouts/footer'

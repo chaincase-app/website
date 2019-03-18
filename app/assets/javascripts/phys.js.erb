@@ -13,7 +13,7 @@ var canvas,
 
 var boxBodies = [];
 var face = document.createElement('img');
-face.src = 'assets/img/dannygouldface.gif';
+face.src = '<%= asset_path 'dannygouldface.gif'%>';
 face.alt = 'Danny Gould\'s face';
 init();
 animate();
