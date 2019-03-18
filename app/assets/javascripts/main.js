@@ -1,42 +1,57 @@
 window.onload = function() {
-	$('.project-card').click(openProject);
+  var cards = queryAll('.project-card');
+  [].forEach.call(cards, function(card) {
+    card.addEventListener('click', openProject);
+  })
+}
+
+var closeProjectListener = function(e) {
+  if(!e.target.closest('.project-card--expanded') || e.target.closest('.cancel')) {
+    closeProject(e);
+  }
 }
 
 
 var expanded = false;
-var openProject = function() {
+var openProject = function(e) {
+  e.stopPropagation();
 	expanded = this.id;
-	$(this).addClass('project-card--expanded');
+	this.classList.add('project-card--expanded');
 
 	// hide all non-expanded projects
-	$('.project-card:not(#'+ this.id + ')')
-		.each(function () {
-			$(this).css('display', 'none');
-		})
+	var closedCards = queryAll('.project-card:not(#'+ this.id + ')');
+	[].forEach.call(closedCards, function (card) {
+    card.style.display ='none';
+  })
 
 	// add closeProject listener to !.project-card--expanded elements
-	$(document).click(function(event) {
-		if(!$(event.target).closest($('.project-card--expanded')).length || $(event.target).closest($('.cancel')).length) {
-			closeProject();
-		}
-	})
+	document.addEventListener('click', closeProjectListener)
 
-	//TODO add x to close to DOM
-	$(this).append('<div class="cancel"></div>');
+  // cancel x to close to DOM
+  var div = document.createElement('div');
+  div.className = 'cancel';
+  div.addEventListener('click', closeProjectListener);
+	this.appendChild(div);
 }
 
-//TODO delete FAB
-var closeProject = function() {
+var closeProject = function(e) {
+  e.stopPropagation();
+
 	// remove whole document listener
-	$(document).off('click');
+	document.removeEventListener('click', closeProjectListener);
+
 	// remove cancel button from DOM
-	$('div').remove('.cancel');
-	$('#'+expanded).removeClass('project-card--expanded');
+  var cancel = query('.cancel')
+  if (cancel != null) {
+    cancel.remove();
+    }
+
+	query('#'+expanded).classList.remove('project-card--expanded');
 	// display hidden elements
-	$('.project-card:not(#'+ expanded + ')')
-		.each(function () {
-			$(this).css('display', 'block');
-		})
+	var closedCards = queryAll('.project-card:not(#'+ expanded + ')');
+	[].forEach.call(closedCards, function(card) {
+			card.style.display = 'block';
+	})
 
 	expanded = false;
 }
