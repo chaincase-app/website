@@ -12,4 +12,5 @@
   %body{class: "#{controller_name} #{action_name}"}
     .content
       = yield
-      = render 'layouts/footer'
+      %section
+        = render 'layouts/footer'
