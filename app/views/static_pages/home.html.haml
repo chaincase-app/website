@@ -113,3 +113,8 @@
             %strong Challenges:
             %br/
             I was not very familiar with CSS during this project so I struggeled to lay out things centered and create a mobile responsive design. I gained a lot of familiarity with CSS3 through this project and also learned how to alter basic PHP to add functionality like the contact form.
+%section#blog.copy
+  - @blog_previews.each do |preview|
+    %preview
+      = preview.content
+      %a{href: "blog/#{preview.name}"} Continue Reading
