@@ -14,21 +14,43 @@ Stylesheet for Daniel Gould
 	-o-transition: .15s ease-in;
 }
 
-*, body {
-	margin: 0;
-}
+$base-font-size: 1em;
+
 
 html, body {
 	font-family: 'League Spartan', Verdana, Helvetica, Arial, sans-serif;
-	font-size: 18px;
+	font-size: $base-font-size;
 	font-weight: 400;
-	height: 100%;
 }
+
+*, body {
+	margin: 0;
+}
+// Set heading size using modular scale
+$heading-scale: 1.4;
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: $base-font-size * pow($heading-scale, (6 - $i));
+  }
+}
+
 
 body {
 	color: #171123;
 	background-color: #fbfef9;
-}
+}	
 
 #intro {
 	min-height: calc(100vh - 80px);
@@ -76,68 +98,54 @@ body {
 }
 
 @-moz-keyframes pulse {
-0% {
-	-moz-transform: scale(0);
-	opacity: 0.0;
-}
-25% {
-	-moz-transform: scale(0);
-	opacity: 0.1;
-}
-50% {
-	-moz-transform: scale(0.1);
-	opacity: 0.3;
-}
-75% {
-	-moz-transform: scale(0.5);
-	opacity: 0.5;
-}
-100% {
-	-moz-transform: scale(1);
-	opacity: 0.0;
-}
+  0% {
+    -moz-transform: scale(0);
+    opacity: 0.0;
+  }
+  25% {
+    -moz-transform: scale(0);
+    opacity: 0.1;
+  }
+  50% {
+    -moz-transform: scale(0.1);
+    opacity: 0.3;
+  }
+  75% {
+    -moz-transform: scale(0.5);
+    opacity: 0.5;
+  }
+  100% {
+    -moz-transform: scale(1);
+    opacity: 0.0;
+  }
 }
 
 @-webkit-keyframes pulse {
-0% {
-	-webkit-transform: scale(0);
-	opacity: 0.0;
-}
-25% {
-	-webkit-transform: scale(0);
-	opacity: 0.1;
-}
-50% {
-	-webkit-transform: scale(0.1);
-	opacity: 0.3;
-}
-75% {
-	-webkit-transform: scale(0.5);
-	opacity: 0.5;
-}
-100% {
-	-webkit-transform: scale(1);
-	opacity: 0.0;
-}
-}
-#work h1 {
-	margin: 0 auto 40px auto;
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0.0;
+  }
+  25% {
+    -webkit-transform: scale(0);
+    opacity: 0.1;
+  }
+  50% {
+    -webkit-transform: scale(0.1);
+    opacity: 0.3;
+  }
+  75% {
+    -webkit-transform: scale(0.5);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0.0;
+  }
 }
 
 section {
 	margin: 0 80px 80px 80px;
 }
-	
-h1,
-h2 {
-	font-size: 60px;
-	margin-top: 8px;
-}
-
-h2 {
-  margin-bottom: 20px;
-}
-
 
 #physCanvas {
 	z-index: 1;
@@ -222,7 +230,6 @@ h2 {
 .project-card__description {
 	height: 0;
 	overflow: hidden;
-	font-family: monospace;
 }
 
 .project-card__description p {
@@ -297,7 +304,6 @@ h2 {
 
 a {
 	text-decoration: underline;
-	color: inherit;
 }
 
 a:hover,
@@ -309,17 +315,17 @@ a:hover,
 footer
 */
 
-code,
-pre { background: #eee; color: #ccc;
+footer code,
+footer pre { background: #eee; color: #ccc;
 	border-bottom: 1px solid #d8dee9;
 }
 
-code {
+footer code {
 	padding: 2px 4px;
 	vertical-align: text-bottom;
 }
 
-pre {
+footer pre {
 	padding: 16px;
 	box-shadow: 0 1px 1px 1px #ccc;
 }
@@ -338,20 +344,14 @@ pre {
 
 /* tablet / small screen */
 @media (max-width: 1080px) {
-	h1, h2 {
-		font-size: 40px;
-	}
 }
 
 /* phones */
 @media (max-width: 600px) {
-	h1, h2 {
-		font-size: 32px;
-	}
-	html, body {
-		font-size: 11px;
-	}
-
+  html {
+    font-size: 8pt;
+  }
+  
 	.intro__content {
 		padding-top: 20vh;
 	}
