@@ -31,6 +31,10 @@ html, body {
   font-kerning: normal;
 }
 
+p {
+  width: 60ch;
+}
+
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Work Sans', Verdana, Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -58,6 +62,9 @@ article {
   max-width: 740px;
   padding-left: 20px;
   padding-right: 20px;
+
+  li, ul {
+    width: 60ch;
 }
 
 time {
