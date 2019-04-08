@@ -14,25 +14,77 @@ Stylesheet for Daniel Gould
 	-o-transition: .15s ease-in;
 }
 
-$base-font-size: 1em;
+$base-font-size: 18px;
+$line-height: 1.5;
 
+
+*, body {
+	margin-top: 0;
+  margin-bottom: $base-font-size * $line-height;
+}
 
 html, body {
 	font-family: 'Libre Baskerville', Verdana, Helvetica, Arial, sans-serif;
 	font-size: $base-font-size;
 	font-weight: 400;
+  line-height: $line-height;
+  font-kerning: normal;
 }
 
-*, body {
-	margin: 0;
-}
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Work Sans', Verdana, Helvetica, Arial, sans-serif;
   font-weight: 600;
+  margin-bottom: $line-height * 1rem;
 }
 
+h1,h2 {
+  margin-top: $line-height * 3rem;
+}
+
+h3,h4 {
+  margin-top: $line-height * 2rem;
+}
+
+h5,h6 {
+  margin-top: $line-height * 1rem;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+article {
+  margin: 0 auto;
+  max-width: 740px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+time {
+  opacity: 0.5;
+}
+
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+blockquote p {
+  hanging-punctuation: -0.5rem;
+}
+
+ul, ol {
+  padding-left: 0; 
+  list-style-position: outside;
+}
+
+li {
+  margin-bottom: $line-height * 0.4rem;
+}
+
+
 // Set heading size using modular scale
-$heading-scale: 1.4;
+$heading-scale: 1.18;
 @function pow($number, $exponent) {
   $value: 1;
 
@@ -146,10 +198,6 @@ body {
     -webkit-transform: scale(1);
     opacity: 0.0;
   }
-}
-
-section {
-	margin: 0 80px 80px 80px;
 }
 
 #physCanvas {
