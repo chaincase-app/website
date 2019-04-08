@@ -18,7 +18,7 @@ $base-font-size: 1em;
 
 
 html, body {
-	font-family: 'League Spartan', Verdana, Helvetica, Arial, sans-serif;
+	font-family: 'Libre Baskerville', Verdana, Helvetica, Arial, sans-serif;
 	font-size: $base-font-size;
 	font-weight: 400;
 }
@@ -26,6 +26,11 @@ html, body {
 *, body {
 	margin: 0;
 }
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Work Sans', Verdana, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+
 // Set heading size using modular scale
 $heading-scale: 1.4;
 @function pow($number, $exponent) {
