@@ -7,6 +7,9 @@ Stylesheet for Daniel Gould
  * black: #171123
  */
 
+$imperial: #4c336b;
+$royal-purple: #622aa8;
+
 * {
 	transition: .15s ease-in;
 	-webkit-transition: .15s ease-in;
@@ -29,6 +32,14 @@ html, body {
 	font-weight: 400;
   line-height: $line-height;
   font-kerning: normal;
+}
+
+figure {
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
 }
 
 p {
@@ -77,6 +88,12 @@ time {
   margin: 0 auto;
 }
 
+blockquote {
+  margin-left: 1rem;
+  padding-left: 0.5rem;;
+  border-left: 3px solid #ccc;
+}
+
 blockquote p {
   hanging-punctuation: -0.5rem;
 }
@@ -114,7 +131,7 @@ $heading-scale: 1.18;
 
 body {
 	color: #171123;
-	background-color: #fbfef9;
+	background-color: #ffffff;
 }	
 
 #intro {
@@ -140,8 +157,8 @@ body {
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
-	border: 5px solid rgba(103,120,193,.81);
-	background-color: rgba(114,116,191,.42);
+	border: 5px solid $royal-purple;
+	background-color: $imperial;
 }
 
 .pulse-ring {
@@ -311,8 +328,8 @@ body {
 
 .project-card__technologies li {
 	list-style-type: none;
-	background: #995ec9;
-	color: #fbfef9;
+	background: $royal-purple;
+	color: #ffffff;
 	border-radius: 4px;
 	padding: 4px 8px 4px 8px;
 	margin: 4px
@@ -364,12 +381,14 @@ body {
 }
 
 a {
-	text-decoration: underline;
+  color: $royal-purple;
+  text-decoration: none;
 }
 
 a:hover,
+a:visited,
 .active a {
-	color: #372238;
+  text-decoration: underline;
 }
 
 /*

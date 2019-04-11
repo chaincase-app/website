@@ -1,26 +1,30 @@
-# Building Blocks
-###### BostonHacks 2018 Stratis x FinTechBU Workshop: Writing a Transaction
-#### Writing directly to chain
+# Multisignature Bitcoin in C&num;
+<time datetime="2018-11-18">November 18, 2018</time>
 
+Bitcoin allows shared ownership of coins by using multisignature transactions.
 
-### Background
-This workshop is designed for anyone with limited technical background. Your hand will be held through
-* writing a custom multi-signature transaction
+This guide walks thorugh:
+
+* writing a multisignature transaction by hand
 * broadcasting it to blockchain
-Our ultimate goal is to team with partners and write a 2-of-3 multisignature transaction. We will discuss the scenarios where such a transaction and others may benefit organizations' financing
+* the practical applications of such a transaction
 
-Huge thanks to @NicolasDorier, @nopara73, and everyone else who contributed to [Programming the Blockchain in C#](https://github.com/ProgrammingBlockchain/ProgrammingBlockchain). Much of this workshop draws from that text and the NBitcoin library Nicolas wrote which it details
+#### Acknowledgements
 
-# Let's get started
+Huge thanks to [@NicolasDorier](https://github.com/NicolasDorier), [@nopara73](https://github.com/nopara73), and everyone else who contributed to [Programming the Blockchain in C#](https://github.com/ProgrammingBlockchain/ProgrammingBlockchain). Much of this workshop draws from that text and the NBitcoin library Nicolas wrote which it details.
 
-1) [Install .NET Core as documented here](https://www.microsoft.com/net/core#windowsvs2017).
+Thanks also to [Stratis](https://stratisplatform.com) for the generous donation to [BostonHacks 2018](bostonhacks.io) which made this originally possible.
 
-2) [Install VSCode](https://code.visualstudio.com/download), or use Visual Studio, or your favorite text editor.
-3) Install the [C# Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) or other plugin for your editor like [omnisharp for sublime](https://github.com/OmniSharp/omnisharp-sublime). Without one making mistakes will be too easy.
+## Let's get started
 
-**I highly recommend you type all of the commands and code rather than copy + paste. You'll more quickly get a feel for the library and be able to figure out where your mistakes are.**
+1. [Install .NET Core as documented here](https://www.microsoft.com/net/core#windowsvs2017).
 
-# Create a new project
+2. [Install VSCode](https://code.visualstudio.com/download), or Visual Studio, or your favorite text editor.
+3. Install the [C# Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) or analagous plugin for your editor like [omnisharp for sublime](https://github.com/OmniSharp/omnisharp-sublime). Without one making mistakes will be too easy.
+
+**I highly recommend you type all of the commands and code rather than copy and paste. You'll more quickly get a feel for the library and be able to figure out where your mistakes are.**
+
+## Create a new project
 
 Enter the following commands in your command line:
 ```console
@@ -59,11 +63,12 @@ namespace StratisProject
     }
 }
 ```
+
 Run it in console:
 ```console
 dotnet run
 ```
-This program generates a 3 bitcoin secret keys (sk). Open a new file and **write them down**. We'll need them in the next steps.
+This program generates three bitcoin secret keys (sk). Open a new file and **write them down**. We'll need them in the next steps.
 
 ```
 // Keys.txt
@@ -74,8 +79,7 @@ Alice     key: <cSWyMTFYWBVjv7tzvpj1rQgMUwccs5yGgi9ZiHzP978nohWEDH9w>
 Bob       key: <cUWedW9rd7HnsTdks1HDwUTTWRDsMvHz2kY6dbv5pH4jgHU1pN9H>
 ```
 
-Substitute your keys **These keys won't work for you**. Replace your existing Main method with the following:
-
+Substitute your keys for the ones above. Replace your existing Main method with the following:
 ```cs
 // Program.cs (Main method snipet)
 
@@ -97,14 +101,13 @@ static void Main(string[] args)
 dotnet run
 ```
 
->❔: When you run this program, is the WalletInputFormat sk logged the same? Why or why not?
+>❓ When you run this program, is the WalletInputFormat sk logged the same? Why or why not?
 
-# Writing a Multisig Transaction
-Bitcoin allows us to have shared ownership over coins with multi-signature transactions or multi-sig for short.
+## Writing a Multisig Transaction
 
-In order to demonstrate this shared ownership we will create a ```ScriptPubKey``` that represents an **m-of-n multisig**. This means that in order to spend the coins, **m** number of private keys will be needed to sign the spending transaction out of the **n** number of different public keys provided.
+In order to demonstrate this ownership we will create a `ScriptPubKey` that represents an **m-of-n multisig**. In order to spend the coins this `ScriptPubKey` owns, **m** private keys out of the **n** given public keys provided must sign the spending transaction.
 
-Let’s create a multi-sig contract where two of the three Bob, Alice and our treasurer need to sign a transaction in order to spend a coin.  
+Let’s create a multisig contract where two of the three Bob, Alice and the treasurer need to sign a transaction in order to spend a coin.  
 
 ```cs
 // Program.cs
@@ -127,14 +130,14 @@ The program now generates this script which you can use as a public key (coin de
 2 0282213c7172e9dff8a852b436a957c1f55aa1a947f2571585870bfb12c0c15d61 036e9f73ca6929dec6926d8e319506cc4370914cd13d300e83fd9c3dfca3970efb 0324b9185ec3db2f209b620657ce0e9a792472d89911e0ac3fc1e5b5fc2ca7683d 3 OP_CHECKMULTISIG
 ```  
 
-As you can see, the ```scriptPubkey``` has the following form: ```<sigsRequired> <pubKeys…> <pubKeysCount> OP_CHECKMULTISIG```  
+As you can see, the `scriptPubkey` has the following form: `<sigsRequired> <pubKeys…> <pubKeysCount> OP_CHECKMULTISIG` 
 
-> [scriptPubKey](https://bitcoin.org/en/glossary/pubkey-script) is a Tx output which specifies conditions that must be satisfied in order to spend the value of the output. In this multi-sig transaction, we require 2-of-3 specified pubkeys to sign as condition to spend. 
+[scriptPubKey](https://bitcoin.org/en/glossary/pubkey-script) is a Tx output which specifies conditions that must be satisfied in order to spend the value of the output. In this multi-sig transaction, we require 2-of-3 specified pubkeys to sign as condition to spend. 
 
-### Notable Example [🔗](https://en.bitcoin.it/wiki/Multisignature#Notable_examples_in_practice)
->The cold storage wallet of the Bitfinex exchange is a single 3-of-6 multisig address `3D2oetdNuZUqQHPJmcMDDHYoqkyNVsFk9r` which as of November 2018 over [₿1,943,295](https://www.blockchain.com/btc/address/3D2oetdNuZUqQHPJmcMDDHYoqkyNVsFk9r) has flowed through ($12.3 billion). Presumably the keys are kept very safe by Bitfinex's operators. 
+### [Notable Example](https://en.bitcoin.it/wiki/Multisignature#Notable_examples_in_practice):
+The cold storage wallet of the Bitfinex exchange is a single 3-of-6 multisig address `3D2oetdNuZUqQHPJmcMDDHYoqkyNVsFk9r` from which (as of November 2018) over [₿1,943,295](https://www.blockchain.com/btc/address/3D2oetdNuZUqQHPJmcMDDHYoqkyNVsFk9r) &asymp; $12.3 billion has flowed. Presumably, the keys are kept very safe by Bitfinex's operators. 
 
-# P2SH 2-of-3 Transaction
+## P2SH 2-of-3 Transaction
 
 This PubKey Script (scriptPubKey) we logged, though valid, doesn't look very much like a wallet-friendly address. We will run it through a function so a sender can use it like any other address.
 
@@ -159,7 +162,7 @@ And view the new output.
 OP_HASH160 57b4162e00341af0ffc5d5fab468d738b3234190 OP_EQUAL
 ```  
 
-This output hash represents the hash of the previous multi-sig script containing `OP_CHECKMULTISIG`
+This output hash represents the hash of the previous multisig script containing `OP_CHECKMULTISIG`
 
 Since it's a hash, we can easily convert it to a base58 bitcoin address with the following snippet:
 
@@ -169,27 +172,25 @@ Since it's a hash, we can easily convert it to a base58 bitcoin address with the
 Console.WriteLine("multi-sig address:" + redeemScript.Hash.GetAddress(network));
 ```
 
-> **Note**: Details are important. We pay to the `redeemScript.Hash` not the `redeemScript`. We want [P2SH](https://bitcoin.org/en/glossary/p2sh-address) not [P2PK[H]](https://bitcoin.org/en/glossary/p2pkh-address)
+Note: Details are important. We must pay to the `redeemScript.Hash` not the `redeemScript`. We want [P2SH](https://bitcoin.org/en/glossary/p2sh-address) not [P2PK[H]](https://bitcoin.org/en/glossary/p2pkh-address).
 
-Excellent! Now we can load it up the same we would our FullNode wallet
+Excellent! Now we can load it up the same we would our FullNode wallet.
 
-# Give the script value 🤑
+## Give the script value 🤑
 
-> ‼️ : The following parts of this guide include live transactions on the bitcoin network. If you send funds to the wrong place, they're gone forever. **Don't run the program unless you understand what it's doing.** Fret not; ask for help.
+The following parts of this guide include live transactions on the bitcoin network. If you send funds to the wrong place, they're gone forever. ==Don't run the program unless you understand what it's doing. Fret not; ask for help.
 
 ```console
 dotnet run
 ```
 
-Copy down your new `redeemScript.Hash` address. Enter it into this [bitcoin faucet](https://coinfaucet.eu/en/btc-testnet/) to get free coin for testing. If that's down here's the [backup faucet](http://bitcoinfaucet.uo1.net/)
+Copy down your new `redeemScript.Hash` address. Enter it into this [bitcoin faucet](https://coinfaucet.eu/en/btc-testnet/) to get free coin for testing. If that's down, here's the [backup faucet](https://bitcoinfaucet.uo1.net/).
 
 Search the same **receive address** (`redeemScript.Hash` address) or **transactionId** (txId) on a [block explorer](https://testnet.smartbit.com.au/) to view the tx network status.
 
-![](./assets/FaucetTxId.png)
-
 We're going to need some network connectivity to get funds out from now cold storage.
 
-# Become a node (or a leech)
+##  Become a node (or a leech)
 > Who runs a bitcoin node? [Send from your own node](https://programmingblockchain.gitbook.io/programmingblockchain/bitcoin_transfer/spend_your_coin#with-your-own-bitcoin-core).
 
 Add `QBitNinja.Client` to your project:
@@ -221,16 +222,16 @@ Console.WriteLine(receiveTransactionResponse.TransactionId);
 Console.WriteLine(receiveTransactionResponse.Block.Confirmations);
 ```
 
-# Making a Payment 💸
+## Make a Payment 💸
 
-Because our funds are locked in a 2-of-3 contract it (in order to be able to spend it) is a thus little more complicated than just calling ```Transaction.Sign```
+Because our funds are locked in a 2-of-3 contract spending is a bit more complicated than just calling `Transaction.Sign`
 
-Later we will talk more deeply on the subject but for now let’s use the ```TransactionBuilder``` to sign the transaction.
+Later we will explain what is going on under the hood. For now let’s use the `TransactionBuilder` to sign the transaction.
 
-### From where?
+### From Where?
 
 Let's see which output of our transaction we can spend.
->❔: What does it mean to "spend" cryptocurrency?
+❔: What does it mean to "spend" cryptocurrency?
 
 ```cs
 // Program.cs (cont.)
@@ -254,7 +255,7 @@ if (outpointToSpend == null)
 Console.WriteLine("We want to spend outpoint #{0}", outpointToSpend.N + 1);
 ```
 
-### To who?
+### To Who?
 We already know Lucas's address is `mv4rnyY3Su5gjcDNzbMLKBQkBicCtHUtFB`
 
 
@@ -266,13 +267,13 @@ var lucasAddress = BitcoinAddress.Create("mv4rnyY3Su5gjcDNzbMLKBQkBicCtHUtFB", n
 ```
 
 
-> ‼️: We could sign & broadcast this transaction now. What's missing? Do we have a problem?
+> ‼️: We could sign & broadcast this transaction now. What's missing? What problem might we have?
 
 Typically we'd add a change output but lucas deserves all our bit wealth
 
-# Signing the contract 🖋️
+## Sign the Contract 🖋️
 
-We need 2 of 3. Even if the treasurer doesn't approve, Alice & Bob'll have their way.
+We need 2-of-3. Even if the treasurer doesn't approve, Alice & Bob'll have their way.
 
 ```cs
 // Program.cs (cont.)
@@ -304,7 +305,7 @@ Transaction aliceSigned =
         .SignTransaction(unsigned);
 
 ```
-![](./assets/aliceSigned.png)  
+<%= image_tag "alice-signed.png" %>
 
 ```cs
 // Program.cs (cont.)
@@ -317,9 +318,9 @@ Transaction bobSigned =
 	.SignTransaction(aliceSigned);
 ```
 
-![](./assets/bobSigned.png)  
+<%= image_tag "bob-signed.png" %>
 
-Now, Bob and Alice can combine their signatures into one transaction. This transaction will then be valid, because two signatures were used from the three (Bob, Alice and Satoshi) original signatures that were initially provided. The requirements of the 'two-of-three' multisig have therefore been met. If this wasn't the case, the network would not accept this transaction, because the nodes reject all unsigned or partially signed transactions.
+Now, Bob and Alice can combine their signatures into one transaction. This transaction will then be valid, because two signatures were used from the three (Bob, Alice and Satoshi) original signatures that were initially provided. The requirements of the 'two-of-three' multisig have therefore been met. If this wasn't the case, the network would not accept this transaction, because the nodes reject all transactions without complete signatures.
 
 ```cs
 // Program.cs (cont.)
@@ -332,7 +333,7 @@ Transaction fullySigned =
 Console.WriteLine(fullySigned);
 ```  
 
-![](./assets/fullySigned.png)  
+<%= image_tag "fully-signed.png" %>
 
 Run it:
 ```console
@@ -364,9 +365,9 @@ Output:
 
 The transaction is now ready to be sent to the network, but notice that the CombineSignatures() method was critical here, because both the aliceSigned and the bobSigned transactions were only partially signed, therefore not acceptable by the network. `CombineSignatures()` combined the two partially signed transactions into one fully signed transaction.  
 
-# Broadcast it
+## Broadcast to the Network
 
-Finally, let's send it to bitcoin nodes and get it in the blockchain
+Finally, let's send it to bitcoin nodes and get it in the blockchain.
 
 ```cs
 // Program.cs (cont.)
@@ -388,6 +389,5 @@ else
 dotnet run
 ```
 
-Congrats! Bask in your newfound glory 🥳🎉. You just deployed raw Bitcoin Script to the blockchain. It will be there forever!
-
+Congrats! Bask in your newfound glory 🥳🎉. You just deployed raw bitcoin Script to the blockchain. It should be there forever.
 
