@@ -1,4 +1,4 @@
-# Multisignature Bitcoin in C&num;
+# Multisignature Bitcoin in C#
 <time datetime="2018-11-18">November 18, 2018</time>
 
 Bitcoin allows shared ownership of coins by using multisignature transactions.
@@ -18,7 +18,6 @@ Thanks also to [Stratis](https://stratisplatform.com) for the generous donation 
 ## Let's get started
 
 1. [Install .NET Core as documented here](https://www.microsoft.com/net/core#windowsvs2017).
-
 2. [Install VSCode](https://code.visualstudio.com/download), or Visual Studio, or your favorite text editor.
 3. Install the [C# Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) or analagous plugin for your editor like [omnisharp for sublime](https://github.com/OmniSharp/omnisharp-sublime). Without one making mistakes will be too easy.
 
