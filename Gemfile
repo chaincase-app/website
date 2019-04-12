@@ -11,7 +11,7 @@ gem 'rails', '5.2.2.1'
 # Provide Haml generators for rails
 gem 'haml-rails', '~> 1.0'
 # Render Markdown as HTML
-gem 'redcarpet', '3.4.0'
+gem 'kramdown', '2.1.0'
 # Highlight syntax in redcarpet
 gem 'rouge', '3.3.0'
 # Use Puma as the app server
