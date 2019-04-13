@@ -7,8 +7,10 @@ Stylesheet for Daniel Gould
  * black: #171123
  */
 
-$imperial: #4c336b;
-$royal-purple: #622aa8;
+$imperial: #A57FC4;
+$royal-purple: #604291;
+
+$monospace: Menlo,Consolas,Liberation Mono,Courier,monospace;
 
 * {
 	transition: .15s ease-in;
@@ -24,6 +26,8 @@ $line-height: 1.5;
 *, body {
 	margin-top: 0;
   margin-bottom: $base-font-size * $line-height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html, body {
@@ -34,16 +38,32 @@ html, body {
   font-kerning: normal;
 }
 
+.highlight {
+  border-radius: 1rem;
+  line-height: 1;
+}
+
+pre {
+  padding: $base-font-size * $line-height;
+  font-weight: 700;
+  font-family: $monospace;
+  font-size: $base-font-size * 0.8;
+
+  code {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  }
+}
+
 figure {
   margin: 0 auto;
 }
 
 img {
   max-width: 100%;
-}
-
-p {
-  width: 60ch;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -68,19 +88,23 @@ h1 {
   margin-bottom: 0;
 }
 
+time + * {
+  margin-top: $line-height * 2rem;
+}
+
 article {
   margin: 0 auto;
   max-width: 740px;
   padding-left: 20px;
   padding-right: 20px;
+}
 
-  li, ul {
-    width: 60ch;
-  }
+figure {
+  text-align: center;
 }
 
 time {
-  opacity: 0.5;
+  color: #777;
 }
 
 .content {
@@ -301,7 +325,7 @@ body {
 }
 
 .project-card .site-link {
-	font-family: monospace;
+	font-family: $monospace;
 	float: right;
 }
 

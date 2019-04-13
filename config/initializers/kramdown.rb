@@ -1,3 +1,4 @@
+require 'rouge'
 require 'kramdown'
 
 module ActionView
@@ -13,12 +14,11 @@ module ActionView
         end
 
         def render(template)
-          Kramdown::Document.new(template).to_html.html_safe
+          Kramdown::Document.new(template, {syntax_highlighter: 'rouge'}).to_html.html_safe
         end
 
         private
 
-        # unused thus far
         def erb
           @erb ||= ActionView::Template.registered_template_handler(:erb)
         end
