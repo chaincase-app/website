@@ -7,6 +7,10 @@ Stylesheet for Daniel Gould
  * black: #171123
  */
 
+$off-white: #f7f6ec;
+$off-black: #1E1E1E;
+$crimson: #cf3f61;
+
 $imperial: #A57FC4;
 $royal-purple: #604291;
 
@@ -159,8 +163,8 @@ $heading-scale: 1.18;
 
 
 body {
-	color: #171123;
-	background-color: #ffffff;
+	color: $off-black;
+	background-color: $off-white;
 }	
 
 #intro {
@@ -170,7 +174,7 @@ body {
 
 #intro::selection,
 #intro::-moz-selection {
-	background: rgba(0,0,0,0);
+	background-color: rgba(0,0,0,0);
 }
 
 .pulse {
@@ -187,7 +191,7 @@ body {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border: 5px solid $royal-purple;
-	background-color: $imperial;
+	background-color: $crimson;
 }
 
 .pulse-ring {
@@ -362,8 +366,8 @@ body {
 
 .project-card__technologies li {
 	list-style-type: none;
-	background: $royal-purple;
-	color: #ffffff;
+	background-color: $royal-purple;
+	color: $off-white;
 	border-radius: 4px;
 	padding: 4px 8px 4px 8px;
 	margin: 4px
