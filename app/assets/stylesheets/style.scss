@@ -31,7 +31,7 @@ $line-height: 1.5;
 }
 
 html, body {
-	font-family: 'Libre Baskerville', Verdana, Helvetica, Arial, sans-serif;
+	font-family: 'Libre Baskerville', Garamond, Georgia, serif;
 	font-size: $base-font-size;
 	font-weight: 400;
   line-height: $line-height;
@@ -67,8 +67,7 @@ img {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Work Sans', Verdana, Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: $line-height * 1rem;
 }
 
@@ -97,6 +96,12 @@ article {
   max-width: 740px;
   padding-left: 20px;
   padding-right: 20px;
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 }
 
 figure {
@@ -265,6 +270,8 @@ body {
 
 .intro__content h1,
 .intro__content h2 {
+  font-size: 60px;
+  margin: 0;
 	display: inline-block;
 	text-shadow: 
 	 -1px -1px 0 #fbfef9,
@@ -283,11 +290,11 @@ body {
 
 
 .project-card {
+  cursor: zoom-in;
 	position: relative;
 	overflow: hidden;
 	max-width: 700px;
 	margin: 0 auto 40px auto;
-	cursor: zoom-in;
 }
 
 .project-card:hover {
@@ -297,6 +304,7 @@ body {
 }
 
 .project-card--expanded {
+  cursor: default;
 	opacity: 1.0 !important;
 	max-width: 100%;
 	width: 700px;
@@ -320,30 +328,32 @@ body {
 	height: auto;
 }
 
-.project-card h3 {
+.project-card h2 {
 	display: inline;
 }
 
+.project-card__caption {
+  line-height: 1.5rem;
+}
+
+.project-card__caption,
+.project-card__description {
+  margin-left: $base-font-size * $line-height;
+  margin-right: $base-font-size * $line-height;
+}
+
 .project-card .site-link {
-	font-family: $monospace;
 	float: right;
 }
+
 
 .project-card__description {
 	height: 0;
 	overflow: hidden;
-}
-
-.project-card__description p {
-	margin: 0 10px 10px 10px;
-}
-
-.project-card__caption {
-	padding: 8px;
+  margin-bottom: 0;
 }
 
 .project-card__technologies {
-	margin: 20px 0 20px;
 	padding: 0;
 	display: flex;
 	flex-wrap: wrap;
@@ -361,13 +371,14 @@ body {
 
 .cancel {
    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjAiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTAgNTAiIGZpbGw9IiNmYWxzZSIgPiAgICA8cGF0aCBkPSJNMjUsM0MxMi44NjksMywzLDEyLjg2OSwzLDI1czkuODY5LDIyLDIyLDIyczIyLTkuODY5LDIyLTIyUzM3LjEzMSwzLDI1LDN6IE0zNC4yMDcsMzIuNzkzCWMwLjM5MSwwLjM5MSwwLjM5MSwxLjAyMywwLDEuNDE0QzM0LjAxMiwzNC40MDIsMzMuNzU2LDM0LjUsMzMuNSwzNC41cy0wLjUxMi0wLjA5OC0wLjcwNy0wLjI5M0wyNSwyNi40MTRsLTcuNzkzLDcuNzkzCUMxNy4wMTIsMzQuNDAyLDE2Ljc1NiwzNC41LDE2LjUsMzQuNXMtMC41MTItMC4wOTgtMC43MDctMC4yOTNjLTAuMzkxLTAuMzkxLTAuMzkxLTEuMDIzLDAtMS40MTRMMjMuNTg2LDI1bC03Ljc5My03Ljc5MwljLTAuMzkxLTAuMzkxLTAuMzkxLTEuMDIzLDAtMS40MTRzMS4wMjMtMC4zOTEsMS40MTQsMEwyNSwyMy41ODZsNy43OTMtNy43OTNjMC4zOTEtMC4zOTEsMS4wMjMtMC4zOTEsMS40MTQsMHMwLjM5MSwxLjAyMywwLDEuNDE0CUwyNi40MTQsMjVMMzQuMjA3LDMyLjc5M3oiPjwvcGF0aD48L3N2Zz4=') 50% 50% no-repeat;
+   cursor: pointer;
    background-size: 100%;   
-   border-radius: 25px;
-   width: 50px;
-   height: 50px;
+   border-radius: $base-font-size * $line-height;
+   width: 2 * $base-font-size * $line-height;
+   height: 2 * $base-font-size * $line-height;
    position: absolute;
-   top: 10px;
-   right: 10px;
+   top: $base-font-size * $line-height;
+   right: $base-font-size * $line-height;
 	-webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75); 
 	-moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75); 
 	box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
@@ -474,14 +485,3 @@ footer pre {
 	}
 }
 
-@font-face {
-	font-family: 'League Spartan';
-	src:font-url('leaguespartan-bold.eot');
-	src:font-url('leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
-		font-url('leaguespartan-bold.woff2') format('woff2'),          
-		font-url('leaguespartan-bold.woff') format('woff'),          
-		font-url('leaguespartan-bold.ttf') format('truetype'),          
-		font-url('leaguespartan-bold.svg#league_spartanbold') format('svg');
-	font-weight: bold;
-	font-style: normal;
-}

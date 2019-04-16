@@ -22,7 +22,7 @@ class StaticPagesController < ApplicationController
     post = render_to_string partial: "blog/#{post.name}"
     #whitespace .gsub(/\s+/, ""
     doc = Nokogiri::HTML(post)
-    post = doc.xpath('//body/*[position() < 5]').to_html()
+    post = doc.xpath('//body/*[position() < 6]').to_html()
     @post = render_to_string inline: post
   end
 
