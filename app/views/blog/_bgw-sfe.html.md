@@ -127,7 +127,7 @@ Finally, the shared polynomial of degree `$t$` is interpolated as secret shares 
 As described to begin with, function inputs must remain private. For any coalition of `$t-1$` or fewer parties, and for any two inputs to all parties such that the outputs of the parties in the coalition are the same on both inputs, the view of the coalition from an execution on one input has the same distribution as its view from an execution on the other input. This is because the input secret shares come from an equal distribution out of a finite field as detailed in the secret sharing section. The following describes a general way to represent the protocol execution in the presence of an adversarial environment and the security in such a setting:
 
 <figure>
-  <%= image_tag "real-ideal-bgw-security" %>
+  <%= image_tag "real-ideal-bgw-security.png" %>
 </figure>
 
 In a real scenario, it is possible some of the parties leak information at intermediate steps to the external environment `$E$`. This is not a problem for secrecy, because as long as the number of corrupt parties is less than `$t$`, no information beyond the initial information is to be gained. The corrupt parties may share one another's input, but that is out of choice and no fault of the protocol.
