@@ -73,6 +73,7 @@ Shamir secret shares are homomorphic because they are coefficients of polynomial
 In the case of secret shares, as long as the degree of the underlying secret polynomial is maintained, the shares can be further manipulated. This is why addition can be done between shares locally with no extra cost other than that of computing direct addition: `$ax + bx = (a+b)x$`. In the case shares are multiplied, an extra step must be explained to keep the degree of the result from changing because `$ax \cdot bx = (a \cdot b)x^2$`.
 
 ## The BGW Protocol
+
 <figure>
   <%= image_tag "bgw-protocol-addition.png" %>
   <figcaption>Example BGW protocol evaluating addition</figcaption>

@@ -1,7 +1,8 @@
 # Tal Rabin: 51% Attacks are Hard
 <time datetime="2019-03-06">March 06, 2019</time>
+
 <figure>
-  <%= image_tag "rsa-conference-2019-cryptographers-panel.jpeg" %>
+  <%= image_tag "rsa-conference-2019-cryptographers-panel.jpg" %>
   <figcaption>From left to right: Zulfikar Razman, Ron Rivest, Shafi Goldwasser, Whitfield Diffie, Tal Rabin, Paul Kocher</figcaption>
 </figure>
 
@@ -19,7 +20,7 @@ So then, let’s do some napkin math. What does it actually cost?
 Let’s buy the best miners available which are also the most power efficient. Bitmain’s next generation (shipping April 1–10) Antminer T15 does 23 Tera hashes per second at 1541W and costs $710.
 
 <figure>
-  <%= image_tag "bitcoin-hash-per-second.jpeg" %>
+  <%= image_tag "bitcoin-hash-per-second.jpg" %>
   <figcaption>https://www.blockchain.com/en/charts/hash-rate</figcaption>
 </figure>
 For the sake of simplicity let’s
