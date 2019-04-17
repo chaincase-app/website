@@ -28,7 +28,7 @@ $line-height: 1.5;
 
 
 *, body {
-	margin-top: 0;
+  margin: 0;
   margin-bottom: $base-font-size * $line-height;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -98,8 +98,6 @@ time + * {
 article {
   margin: 0 auto;
   max-width: 740px;
-  padding-left: 20px;
-  padding-right: 20px;
 
   img {
     margin-left: auto;
@@ -119,6 +117,8 @@ time {
 .content {
   max-width: 1280px;
   margin: 0 auto;
+  padding-left: $base-font-size * $line-height;
+  padding-right: $base-font-size * $line-height;
 }
 
 blockquote {
@@ -179,6 +179,8 @@ body {
 
 .pulse {
 	position: absolute;
+  top: 40vh;
+  right: 30vh;
 	z-index: 0;
 }
 
@@ -190,26 +192,24 @@ body {
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
-	border: 5px solid $royal-purple;
-	background-color: $crimson;
 }
 
 .pulse-ring {
 	position: absolute;
 	display: block;
 	background: 0 0;
-	width: 64px;
-	height: 64px;
+	width: 80px;
+	height: 80px;
+	top: -40px;
+	left: -40px;
 	border: 10px solid rgba(114,117,191,.38);
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
-	animation: pulse 3s ease-out;
-	-webkit-animation: pulse 3s ease-out infinite;
-	-moz-animation: pulse 3s ease-out infinite;
+	animation: pulse 1.5s ease-out;
+	-webkit-animation: pulse 1.5s ease-out infinite;
+	-moz-animation: pulse 1.5s ease-out infinite;
 	animation-iteration-count: infinite;
-	top: -32px;
-	left: -32px;
 }
 
 @-moz-keyframes pulse {
@@ -278,10 +278,10 @@ body {
   margin: 0;
 	display: inline-block;
 	text-shadow: 
-	 -1px -1px 0 #fbfef9,
-	 1px -1px 0 #fbfef9,
-	 -1px 1px 0 #fbfef9,
-	 1px 1px 0 #fbfef9;
+	 -1px -1px 0 $off-white,
+	 1px -1px 0 $off-white,
+	 -1px 1px 0 $off-white,
+	 1px 1px 0 $off-white;
   -webkit-touch-callout: none;
     -webkit-user-select: none;
      -khtml-user-select: none;
@@ -370,7 +370,6 @@ body {
 	color: $off-white;
 	border-radius: 4px;
 	padding: 4px 8px 4px 8px;
-	margin: 4px
 }
 
 .cancel {
@@ -462,15 +461,8 @@ footer pre {
 }
 
 /* tablet / small screen */
-@media (max-width: 1080px) {
-}
-
 /* phones */
-@media (max-width: 600px) {
-  html {
-    font-size: 8pt;
-  }
-  
+@media (max-width: 1080px) {
 	.intro__content {
 		padding-top: 20vh;
 	}
@@ -478,14 +470,5 @@ footer pre {
 	#intro { 
 		min-height: calc(100vh - 20px);
 	}	
-
-	.contact-card {
-		-webkit-margin-bottom-collapse: separate;
-		margin-bottom: 40px;
-	}
-
-	section {
-		margin: 0 20px 20px 20px;
-	}
 }
 
