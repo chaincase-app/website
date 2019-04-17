@@ -26,10 +26,9 @@ $monospace: Menlo,Consolas,Liberation Mono,Courier,monospace;
 $base-font-size: 18px;
 $line-height: 1.5;
 
-
 *, body {
   margin: 0;
-  margin-bottom: $base-font-size * $line-height;
+  margin-bottom: 1rem * $line-height;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -48,10 +47,10 @@ html, body {
 }
 
 pre {
-  padding: $base-font-size * $line-height;
+  padding: 1rem * $line-height;
   font-weight: 700;
   font-family: $monospace;
-  font-size: $base-font-size * 0.8;
+  font-size: 0.8rem;
 
   code {
     white-space: pre-wrap;       /* css-3 */
@@ -63,11 +62,19 @@ pre {
 }
 
 figure {
+  overflow-wrap: break-word;
   margin: 0 auto;
 }
 
 img {
   max-width: 100%;
+}
+
+.logo {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: -.2rem;
+  width: 2rem;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -95,6 +102,16 @@ time + * {
   margin-top: $line-height * 2rem;
 }
 
+header * {
+  margin-top: $line-height * 1rem;
+
+}
+
+header {
+  margin: 0 auto;
+  max-width: 740px;
+}
+
 article {
   margin: 0 auto;
   max-width: 740px;
@@ -117,8 +134,8 @@ time {
 .content {
   max-width: 1280px;
   margin: 0 auto;
-  padding-left: $base-font-size * $line-height;
-  padding-right: $base-font-size * $line-height;
+  padding-left: $line-height * .5rem;
+  padding-right: $line-height * .5rem;
 }
 
 blockquote {
@@ -143,6 +160,8 @@ li {
 
 // Set heading size using modular scale
 $heading-scale: 1.18;
+$mobile-font-size: 16px;
+
 @function pow($number, $exponent) {
   $value: 1;
 
@@ -342,8 +361,8 @@ body {
 
 .project-card__caption,
 .project-card__description {
-  margin-left: $base-font-size * $line-height;
-  margin-right: $base-font-size * $line-height;
+  margin-left: $line-height * 1rem;
+  margin-right: $line-height * 1rem;
 }
 
 .project-card .site-link {
@@ -376,12 +395,12 @@ body {
    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjAiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTAgNTAiIGZpbGw9IiNmYWxzZSIgPiAgICA8cGF0aCBkPSJNMjUsM0MxMi44NjksMywzLDEyLjg2OSwzLDI1czkuODY5LDIyLDIyLDIyczIyLTkuODY5LDIyLTIyUzM3LjEzMSwzLDI1LDN6IE0zNC4yMDcsMzIuNzkzCWMwLjM5MSwwLjM5MSwwLjM5MSwxLjAyMywwLDEuNDE0QzM0LjAxMiwzNC40MDIsMzMuNzU2LDM0LjUsMzMuNSwzNC41cy0wLjUxMi0wLjA5OC0wLjcwNy0wLjI5M0wyNSwyNi40MTRsLTcuNzkzLDcuNzkzCUMxNy4wMTIsMzQuNDAyLDE2Ljc1NiwzNC41LDE2LjUsMzQuNXMtMC41MTItMC4wOTgtMC43MDctMC4yOTNjLTAuMzkxLTAuMzkxLTAuMzkxLTEuMDIzLDAtMS40MTRMMjMuNTg2LDI1bC03Ljc5My03Ljc5MwljLTAuMzkxLTAuMzkxLTAuMzkxLTEuMDIzLDAtMS40MTRzMS4wMjMtMC4zOTEsMS40MTQsMEwyNSwyMy41ODZsNy43OTMtNy43OTNjMC4zOTEtMC4zOTEsMS4wMjMtMC4zOTEsMS40MTQsMHMwLjM5MSwxLjAyMywwLDEuNDE0CUwyNi40MTQsMjVMMzQuMjA3LDMyLjc5M3oiPjwvcGF0aD48L3N2Zz4=') 50% 50% no-repeat;
    cursor: pointer;
    background-size: 100%;   
-   border-radius: $base-font-size * $line-height;
-   width: 2 * $base-font-size * $line-height;
-   height: 2 * $base-font-size * $line-height;
+   border-radius: $line-height * 1rem;
+   width: $line-height * 2rem;
+   height: $line-height * 2rem;
    position: absolute;
-   top: $base-font-size * $line-height;
-   right: $base-font-size * $line-height;
+   top: $line-height * 2rem; 
+   right: $line-height * 2rem; 
 	-webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75); 
 	-moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75); 
 	box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
@@ -462,7 +481,34 @@ footer pre {
 
 /* tablet / small screen */
 /* phones */
-@media (max-width: 1080px) {
+@media screen and (max-width: 800px) {
+  $mobile-heading-scale: 1.1;
+  $mobile-font-size: 16px;
+
+  html, body {
+    font-size: $mobile-font-size;
+  }
+
+  .intro__content h1,
+  .intro__content h2 {
+    font-size: 30px;
+  }
+
+  @for $i from 1 through 6 {
+    h#{$i} {
+      font-size: $base-font-size * pow($mobile-heading-scale, (6 - $i));
+    }
+  }
+
+  .project-card,
+  article {
+    max-width: 100%;
+  }
+
+  ul, ol {
+    list-style-position: inside;
+  }
+
 	.intro__content {
 		padding-top: 20vh;
 	}
@@ -470,5 +516,16 @@ footer pre {
 	#intro { 
 		min-height: calc(100vh - 20px);
 	}	
+
+  .highlight {
+    border-radius: 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+  }
 }
 
