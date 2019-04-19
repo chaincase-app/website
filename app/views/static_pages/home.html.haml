@@ -11,98 +11,32 @@
       Software is my medium. 
 %section#work
   %h2 Recent projects:
-  .row
+  .projects
     #www-card.project-card
-      =image_tag "breeze-logos.png"
-      .project-card__caption
-        %h2 Stratis &times; TumbleBit
-        %a.site-link{:href => "https://stratisplatform.com/wallets/", :target => "_blank"} [🔗]
+      %a.site-link{:href => "https://stratisplatform.com/wallets/", :target => "_blank"}
+        =image_tag "breeze-wallet.png"
+        .project-card__caption
+          %h2 Breeze Privacy Protocol
       .project-card__description
-        %ul.project-card__technologies
-          %li C#
-          %li Cryptography
-          %li Angular
-          %li TypeScript 
-          %li Bitcoin
         %p
-          The Breeze wallet with Privacy Protocol enables users to make their bitcoin fungible via
-          %a{href: "http://tumblebit.cash"} TumbleBit.
-          I worked alongside Stratis Platform developers as well as Boston University scholars to apply the technology to the commercial blockchain space.
-        %p
-          %strong Challenges:
-          %br/
-          University scholars' and companies' idea of the best outcomes for a project differ wildly. As a working Liason, I carry out integration tests to ensure the protocol behaves as advertised in the paper. I also facilitate communicate between the two teams so the protocol suite maintains balance between user and company incentives while retaining the integrity of the original work..
+          Anonymous Bitcoin tumbler enabled by
+          %a{href: "http://tumblebit.cash"} TumbleBit
     #tonygeiger-card.project-card
-      =image_tag "tonygeiger.jpg"
-      .project-card__caption
-        %h2 Tony Geiger
-        %a.site-link{:href => "http://tonygeiger.com", :target => "_blank"} [🔗]
+      %a.site-link{:href => "http://tonygeiger.com", :target => "_blank"}
+        =image_tag "right-flank.jpg"
+        .project-card__caption
+          %h2 Tony Geiger
       .project-card__description
-        %ul.project-card__technologies
-          %li HTML
-          %li CSS
-          %li PHP
-          %li Responsive
-          %li WordPress
         %p
-          This is a simple, budget-oriented, rapidly constructed portfolio website for a unique
-          visual artist from New York. It is a good example of a client site
-          which the owner can maintain on their own while utilizing my design and
-          development skills to adjust an off-the-shelf WordPress theme to their own individual needs.
-        %p
-          %strong Challenges:
-          %br/
-          Tony had all of his content and ideas ready before we began development which made the
-          process straightforward. All alterations needed to stay mobile-responsive and look good
-          on a desktop computer as the original theme did. Large photos needed to be compressed to improve
-          performance of the site.
-          Tony's preparation of content and clear idea of budget from the outset fostered a successful original outcome and lasting business relationship.
-  .row
+          Political, physical, and spiritual statements on the human condition
     #bfd-card.project-card
-      =image_tag "brookfieldfd.jpg"
-      .project-card__caption
-        %h2 Brookfield Fire Department
-        %a.site-link{:href => "http://brookfieldfd.com", :target => "_blank"} [🔗]
+      %a.site-link{:href => "http://brookfieldfd.com", :target => "_blank"}
+        =image_tag "brookfield-fire.jpg"
+        .project-card__caption
+          %h2 Brookfield Fire
       .project-card__description
-        %ul.project-card__technologies
-          %li HTML
-          %li CSS
-          %li Responsive
-          %li JavaScript
-          %li PHP
-          %li WordPress
         %p
-          This is a responsive WordPress website built to fit the developing needs of my local
-          fire department. The chief can now post images and stories as well as other event
-          updates on his own without the need for a trained webmaster. The custom theme
-          fits the department's aesthetic. The site enables integration of published posts with
-          the department's popular Facebook page. It was built exclusively on volunteer hours as my Eagle Scout
-          Service project.
-        %p
-          %strong Challenges:
-          %br/
-          Because of the nature of the service project, I had to incorporate
-          copy, visual, and software comonents created by youth and adult volunteers. This involved
-          educating volunteers about web practices and technologies as well as communicating with the town and department to meet their needs.
-    #tdc-card.project-card
-      =image_tag "trovadesignconsultants.jpg"
-      .project-card__caption
-        %h2 Trova Design Consultants
-        %a.site-link{:href => "http://trovadesign.com", :target => "_blank"} [🔗]
-      .project-card__description
-        %ul.project-card__technologies
-          %li HTML
-          %li CSS
-          %li Responsive
-          %li JavaScript
-          %li PHP
-          %li WordPress
-        %p
-          This is a responsive WordPress website built quickly and inexpensively for a small business in the Berkshires. I was responsible for design, graphics, and development of the site. The site was built to serve the needs of a CAD shop and allow them to update their own content.
-        %p
-          %strong Challenges:
-          %br/
-          I was not very familiar with CSS during this project so I struggeled to lay out things centered and create a mobile responsive design. I gained a lot of familiarity with CSS3 through this project and also learned how to alter basic PHP to add functionality like the contact form.
+          My Eagle Scout Service Project built exclusively on volunteer time
 %section#blog.copy
   - @blog_previews.each do |preview|
     %article
