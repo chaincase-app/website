@@ -1,9 +1,13 @@
-window.onload = function() {
+var main = function () {
+phys();
+(function() {
+  console.log('main');
+  
   var cards = queryAll('.project-card');
   [].forEach.call(cards, function(card) {
     card.addEventListener('click', openProject);
   })
-}
+})();
 
 var closeProjectListener = function(e) {
   if(!e.target.closest('.project-card--expanded') || e.target.closest('.cancel')) {
@@ -55,4 +59,4 @@ var closeProject = function(e) {
 
 	expanded = false;
 }
-
+}

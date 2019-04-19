@@ -147,7 +147,5 @@ The same security model is used for the secret sharing protocol itself for the s
 
 Scribed for Boston University CAS CS 548: "Advanced Cryptography" instructed by [Ran Canetti](http://www.cs.bu.edu/~canetti/) on January 29, 2019.
 
-<script src="//yihui.name/js/math-code.js"></script>
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML">
-</script>
+<div class="mathjax">
+

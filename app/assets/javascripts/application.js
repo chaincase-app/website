@@ -15,3 +15,10 @@
 //= require init
 //= require main
 //= require phys
+//= require mathjax
+
+document.addEventListener('turbolinks:load', function () {
+  // these short circuit if not on the selected page
+  document.querySelector('.static_pages.home') && main();
+  document.querySelector('.mathjax') && mathjax();
+});
