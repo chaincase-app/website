@@ -2,14 +2,14 @@
 <time datetime="2019-03-06">March 06, 2019</time>
 
 <figure>
-  <%= image_tag "rsa-conference-2019-cryptographers-panel.jpg" %>
+  <%= image_tag "rsa-conference-2019-cryptographers-panel.jpg", class: "m-full-width" %>
   <figcaption>From left to right: Zulfikar Razman, Ron Rivest, Shafi Goldwasser, Whitfield Diffie, Tal Rabin, Paul Kocher</figcaption>
 </figure>
 
 The RSA Conference 2019 Cryptographers’ Panel was probably the most legit panel I have ever had the privilege of attending. Tal Rabin, awarded this morning the Award for Excellence in Mathematics, claimed it would cost $250,000 to 51% attack Bitcoin for 1 hour. Tal Rabin, your math is wrong! That number is actually on the order of 1000 times too small.
 
 <figure>
-  <%= image_tag "51-percent-attack-cost.png" %>
+  <%= image_tag "51-percent-attack-cost.png", class: "m-full-width" %>
   <figcaption>Likely the source of confusion: What’s $294,745 × 0? Source: crypto51.app</figcaption>
 </figure>
 
@@ -20,7 +20,7 @@ So then, let’s do some napkin math. What does it actually cost?
 Let’s buy the best miners available which are also the most power efficient. Bitmain’s next generation (shipping April 1–10) Antminer T15 does 23 Tera hashes per second at 1541W and costs $710.
 
 <figure>
-  <%= image_tag "bitcoin-hash-per-second.jpg" %>
+  <%= image_tag "bitcoin-hash-per-second.jpg", class: "m-full-width" %>
   <figcaption>https://www.blockchain.com/en/charts/hash-rate</figcaption>
 </figure>
 For the sake of simplicity let’s
@@ -40,5 +40,4 @@ Bitcoin was designed with the one intention of being difficult to alter. If it u
 To give credit where credit is due, despite the small human slip-up, I ought to thank Tal Rabin at IBM for her extensive work including threshold cryptography, multi-party computation, batch verification, and the work she mentioned today cleverly making use of cryptography to empower women of the #MeToo movement. You inspire me to decipher my cryptography homework. You inspire me to make individuals’ decisions carry weight. You inspire me to be useful.
 
 Thank you! 🤓
-
 
