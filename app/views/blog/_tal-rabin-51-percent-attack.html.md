@@ -1,3 +1,4 @@
+<% provide(:title, 'Tal Rabin: 51% Attacks are Hard') %>
 # Tal Rabin: 51% Attacks are Hard
 <time datetime="2019-03-06">March 06, 2019</time>
 

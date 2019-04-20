@@ -1,3 +1,5 @@
+
+<% provide(:title, 'The Ben-Or, Goldwasser, and Widgerson SFE Protocol') %>
 # The Ben-Or, Goldwasser, and Widgerson SFE Protocol
 <time datetime="2019-04-06">April 6, 2019</time>
 

@@ -1,3 +1,4 @@
+<% provide(:title, 'Multisignature Bitcoin in C#') %>
 # Multisignature Bitcoin in C#
 <time datetime="2018-11-18">November 18, 2018</time>
 
