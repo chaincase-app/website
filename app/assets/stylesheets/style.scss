@@ -7,7 +7,7 @@ Stylesheet for Daniel Gould
  * black: #171123
  */
 
-$off-white: #f7f6ec;
+$off-white: #f1efe9;
 $off-black: #1E1E1E;
 $crimson: #cf3f61;
 
@@ -111,12 +111,25 @@ time + * {
 
 header * {
   margin-top: $line-height * 1rem;
+}
 
+.underline {
+  text-decoration: underline;
 }
 
 header {
+  font-size: 60px;
   margin: 0 auto;
   max-width: 740px;
+}
+
+header a:visited,
+header a {
+  color: $off-black;
+}
+
+header a:hover {
+  text-decoration: none;
 }
 
 article {
@@ -211,7 +224,7 @@ body {
 .pulse {
 	position: absolute;
   top: 40vh;
-  right: 30vh;
+  right: $line-height * 3rem;
 	z-index: 0;
 }
 
@@ -233,7 +246,7 @@ body {
 	height: 80px;
 	top: -40px;
 	left: -40px;
-	border: 10px solid rgba(114,117,191,.38);
+	border: 10px solid $crimson;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -357,6 +370,10 @@ body {
   height: 100%;
   min-width: 0;
   margin: 0;
+    &:hover {
+      transform: rotate(1deg);
+    }
+
 }
 
 .project-card__caption {
@@ -405,7 +422,7 @@ footer
 */
 
 footer code,
-footer pre { background: #eee; color: #ccc;
+footer pre { background: $off-white; color: #ccc;
 	border-bottom: 1px solid #d8dee9;
 }
 
@@ -464,6 +481,7 @@ footer pre {
 
   // for mobile only!
   .m-full-width {
+    max-width: none;
     width: 100vw !important;
     position: relative;
     left: 50%;

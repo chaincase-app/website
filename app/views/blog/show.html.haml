@@ -2,7 +2,9 @@
   %h1
     %a{href: "/"}
       =image_tag("dan_hanzi.svg", class: "logo")
-      %span I'm Dan Gould
+      %span
+        I'm 
+        %span.underline Dan Gould
 %article
   %section
     = render @post 
