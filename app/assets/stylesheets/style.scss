@@ -43,11 +43,6 @@ html, body {
   font-kerning: normal;
 }
 
-::selection, ::selection {
-    color: $off-white;
-    background: $off-black;
-}
-
 .highlight {
   border-radius: 1rem;
   line-height: 1;
