@@ -1,6 +1,4 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
-
 set :application, "portfolio"
 set :repo_url, "git@github.com:dangould/portfolio.git"
 
@@ -21,6 +19,7 @@ set :deploy_to, "/var/www/portfolio"
 # set :pty, true
 
 # Default value for :linked_files is []
+append :linked_files, 'config/database.yml'
 append :linked_files, 'config/master.key'
 
 # Default value for linked_dirs is []
