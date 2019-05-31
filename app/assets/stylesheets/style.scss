@@ -7,8 +7,8 @@ Stylesheet for Daniel Gould
  * black: #171123
  */
 
-$off-white: #f1efe9;
-$off-black: #1E1E1E;
+$off-white: #fff;
+$off-black: #020202;
 $crimson: #cf3f61;
 
 $imperial: #A57FC4;
@@ -26,17 +26,17 @@ $monospace: Menlo,Consolas,Liberation Mono,Courier,monospace;
 }
 
 $base-font-size: 18px;
-$line-height: 1.5;
+$line-height: 1.1;
 
 *, body {
   margin: 0;
-  margin-bottom: 1rem * $line-height;
+  margin-bottom: .8rem * $line-height;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 html, body {
-	font-family: 'Libre Baskerville', Garamond, Georgia, serif;
+  font-family: Helvetica, Arial, sans-serif;
 	font-size: $base-font-size;
 	font-weight: 400;
   line-height: $line-height;
@@ -48,8 +48,7 @@ html, body {
   line-height: 1;
 }
 
-pre,
-.project-card__technologies {
+pre {
   padding: 1rem * $line-height;
   font-weight: 700;
   font-family: $monospace;
@@ -78,6 +77,16 @@ img {
   margin-top: 0;
   margin-bottom: -.2rem;
   width: 2rem;
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: 100%;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -148,7 +157,6 @@ time {
 }
 
 .content {
-  overflow: hidden;
   max-width: 1280px;
   margin: 0 auto;
   padding-left: $line-height * 1rem;
@@ -178,7 +186,6 @@ li {
   margin-bottom: $line-height * 0.4rem;
 }
 
-
 // Set heading size using modular scale
 $heading-scale: 1.18;
 $mobile-font-size: 16px;
@@ -207,198 +214,62 @@ body {
 	background-color: $off-white;
 }	
 
-#intro {
-	min-height: calc(100vh - 80px);
-	position: relative;
-}
+section { 
+  margin-bottom: $line-height * 2rem;
+}	
 
-#intro::selection,
-#intro::-moz-selection {
-	background-color: rgba(0,0,0,0);
-}
 
-.pulse {
-	position: absolute;
-  top: 40vh;
-  right: $line-height * 3rem;
-	z-index: 0;
-}
-
-.pulse-dot {
-	position: relative;
-	display: block;
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-}
-
-.pulse-ring {
-	position: absolute;
-	display: block;
-	background: 0 0;
-	width: 80px;
-	height: 80px;
-	top: -40px;
-	left: -40px;
-	border: 10px solid $crimson;
-	border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	animation: pulse 1.5s ease-out;
-	-webkit-animation: pulse 1.5s ease-out infinite;
-	-moz-animation: pulse 1.5s ease-out infinite;
-	animation-iteration-count: infinite;
-}
-
-@-moz-keyframes pulse {
-  0% {
-    -moz-transform: scale(0);
-    opacity: 0.0;
-  }
-  25% {
-    -moz-transform: scale(0);
-    opacity: 0.1;
-  }
-  50% {
-    -moz-transform: scale(0.1);
-    opacity: 0.3;
-  }
-  75% {
-    -moz-transform: scale(0.5);
-    opacity: 0.5;
-  }
-  100% {
-    -moz-transform: scale(1);
-    opacity: 0.0;
-  }
-}
-
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scale(0);
-    opacity: 0.0;
-  }
-  25% {
-    -webkit-transform: scale(0);
-    opacity: 0.1;
-  }
-  50% {
-    -webkit-transform: scale(0.1);
-    opacity: 0.3;
-  }
-  75% {
-    -webkit-transform: scale(0.5);
-    opacity: 0.5;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    opacity: 0.0;
-  }
-}
-
-#physCanvas {
-	z-index: 1;
-	position: absolute;
-	-webkit-tap-highlight-color:rgba(0,0,0,0);
-}
+$the_tabstop: 28.3vw;
 
 .intro__content {
-	z-index: 2;
-	position: absolute;
-	pointer-events: none;
-	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale'); background: none !important;
-	padding-top: 30vh;
+  padding-top: 1rem;
+  font-weight: 700;
+  max-width: 100vw;
+
+  & > span:first-child {
+    box-sizing: border-box;
+    padding-left: 8vw;
+    text-align: right;
+    width: $the_tabstop;
+    display: inline-block;
+  }
+
+  h2 {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  p {
+    margin-top: 1rem;
+    font-weight: 400;
+  }
 }
 
-.intro__content h1,
-.intro__content h2 {
-  font-size: 60px;
+.intro__title {
+  box-sizing: border-box;
+  text-transform: uppercase;
+  line-height: 0.8;
+  /* magic number to approximate full */
+  font-size: 14.5vw;
   margin: 0;
 	display: inline-block;
-	text-shadow: 
-	 -1px -1px 0 $off-white,
-	 1px -1px 0 $off-white,
-	 -1px 1px 0 $off-white,
-	 1px 1px 0 $off-white;
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
 }
 
-/* project cards */
-
-.projects {
-  color: $off-black;
-
-  }
-.project-card {
-  display: flex;
-  align-items: center;
-  height: 70vh;
-  margin-bottom: 0;
+.intro__details {
+    margin-left: $the_tabstop;
 }
 
-.project-card__technologies {
-  list-style-type: none;
-  margin-right: $line-height * 2rem;
-  text-align: right;
-}
-
-.project-card a {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  align-self: center;
-  max-width: 100%;
-}
-
-.project-card a:hover {
-  text-decoration: none;
-
-
-  .project-card__caption h2 {
-    text-decoration: underline;
-  }
-}
-
-.project-card img {
-  flex: 2 2 0;
-  width: 100%;
-  min-width: 0;
-  margin: 0;
-    &:hover {
-      transform: rotate(1deg);
-    }
-
-}
-
-.project-card__caption {
-  margin: 0;
-  color: $off-black;
-  h2 {
-    font-size: 1rem;
-    margin-top: 0;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  p {
-    margin-bottom: 0;
+@media screen and (min-width: 1280px) {
+  .intro__title {
+    font-size: 187px;
   }
 
-  padding-left: $line-height * 3rem;
-  flex: 1 1 0;
-}
-
-.contact-card {
-	border: solid 8px #fbfef9;
-	max-width: 540px;
-	margin: 0 auto;
+  .intro__content > span:first-child {
+    width: 29.5%;
+  }
+  .intro__details {
+    margin-left: 29.5%;
+  }
 }
 
 a {
@@ -452,6 +323,11 @@ footer pre {
 /* tablet / small screen */
 /* phones */
 @media screen and (max-width: 1000px) {
+
+  .intro__title {
+    font-size: 14.5vw;
+  }
+
   .content {
     padding-left: $line-height * .5rem;
     padding-right: $line-height * .5rem;
@@ -466,34 +342,6 @@ footer pre {
     font-size: $mobile-font-size;
   }
 
-  .project-card {
-    height: auto;
-    flex-direction: column-reverse;
-  }
-
-  .project-card__technologies {
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    width: 100%;
-    li {
-      text-align: right;
-      display: inline-block;
-      margin: 0;
-      margin-right: $line-height * 1rem;
-    }
-  }
-
-  .project-card a {
-    display: block;
-    margin-bottom: 0;
-    img {
-      max-width: none;
-      margin-top: $line-height * 3rem;
-      margin-bottom: $line-height * 1rem;
-    }
-  }
-
   // for mobile only!
   .m-full-width {
     max-width: none;
@@ -505,28 +353,12 @@ footer pre {
     margin-right: -50vw !important;
   }
   
-
-  .project-card__caption {
-    margin-bottom: $line-height * .5rem;
-    padding: 0;
-  }
-
-  .project-card__caption h2 {
-      font-size: $base-font-size * pow($mobile-heading-scale, (6 - 2));
-  }
-
-  .intro__content h1,
-  .intro__content h2 {
-    font-size: 30px;
-  }
-
   @for $i from 1 through 6 {
     h#{$i} {
       font-size: $base-font-size * pow($mobile-heading-scale, (6 - $i));
     }
   }
 
-  .project-card,
   article {
     max-width: 100%;
   }
@@ -534,14 +366,6 @@ footer pre {
   ul, ol {
     list-style-position: inside;
   }
-
-	.intro__content {
-		padding-top: 20vh;
-	}
-
-	#intro { 
-		min-height: calc(100vh - 20px);
-	}	
 
   .highlight {
     border-radius: 0;
@@ -555,4 +379,26 @@ footer pre {
   }
 }
 
+/* Fonts! */
+
+@font-face {
+    font-family: 'Public Sans';
+    src: url('publicsans-bold-webfont.woff2') format('woff2'),
+         url('publicsans-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'Public Sans';
+    src: url('publicsans-regular-webfont.woff2') format('woff2'),
+         url('publicsans-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+
+}
 

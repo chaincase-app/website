@@ -6,10 +6,6 @@
     %title= full_title(yield(:title))
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700'
-    = favicon_link_tag 'favicon.ico'
-    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'
-    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/p2.js/0.7.1/p2.js'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload', defer: 'defer'
   %body{class: "#{controller_name} #{action_name}"}
     .content

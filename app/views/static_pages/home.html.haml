@@ -1,60 +1,36 @@
-- provide(:title, 'A Boston Based Creative Developer')
 %section#intro.copy
-  %canvas#physCanvas
-  .pulse
-    %span.pulse-dot
-    -# There should be a "removeRing()" function call on the ring
-    %span.pulse-ring 
   .intro__content
+    %span
+      A mobile-first privacy wallet unlike anything you've seen 
+
     %h1.intro__title
-      Hi, I'm
-      %span.underline Dan Gould
-      ,
-    %h2 a Boston based creative developer.
-    %h2
-      Software is my medium. 
-%section#work
-  %h2 Recent projects:
-  .projects
-    .project-card
-      %ul.project-card__technologies
-        %li C#
-        %li Bitcoin
-        %li Angular
-        %li TypeScript
-        %li Docker
-      %a{href: "https://github.com/stratisproject/Breeze/releases/tag/1.0.1", target: "_blank"}
-        =image_tag "breeze-wallet.png", class: "m-full-width"
-        .project-card__caption
-          %h2 Breeze Privacy Protocol
-          %p Cryptographic bitcoin anonymiser powered by TumbleBit &amp; Stratis
-    .project-card
-      %ul.project-card__technologies
-        %li CSS
-        %li PHP
-        %li HTML
-        %li Experience
-        %li WordPress
-      %a{:href => "http://tonygeiger.com", target: "_blank"}
-        =image_tag "color-me-gone-phone.jpg", class: "m-full-width"
-        .project-card__caption
-          %h2 Tony Geiger
-          %p Political, physical, and spiritual statements on the human condition
-    .project-card
-      %ul.project-card__technologies
-        %li CSS
-        %li JavaScript
-        %li WordPress
-        %li PHP
-        %li HTML
-      %a{:href => "http://brookfieldfd.com", target: "_blank"}
-        =image_tag "brookfield-fire.jpg", class: "m-full-width"
-        .project-card__caption
-          %h2 Brookfield Fire
-          %p My Eagle Scout service project built exclusively on volunteer time
-%section#blog.copy
-  %h2 Blog:
-  - @blog_previews.each do |preview|
-    %article
-      = preview.content
-      %a{href: "blog/#{preview.name}"} Continue reading &rightarrow;
+      Chaincase
+    %h2.intro__details
+      %i "Bitcoin works best for you when nobody else is capable of moving or freezing your funds without your approval." &mdash; Alena Vranova
+    %p.intro__details
+      Fungible, private bitcoin for all. Powered by
+      %a{href: "https://wasabiwallet.io"} WasabiWallet
+
+%section
+  %h3 Anonymous Peer-to-Peer Networking
+  %p Every networked message is sent over Tor. Nobody, not your ISP, not the CoinJoin server, nor your Bitcoin peers can find out who you are making networked connections with.
+
+  %h3 On-Chain Obfuscation
+  %p Blockchain anonymity powered by math proven by 50,000 coins successfully tumbled using Chaumian CoinJoin. The central tumbler never knows who you are. Keys are always safe on hardware.
+
+  %h3 Privacy-Preserving Bitcoin Light Client
+  %p Chaincase uses compact block filters taking advantage of BIP 158 to realize many privacy benefits of a traditional full node without the prohibitive resource requirements to run.
+
+%section
+  %h3 Stay Tuned
+  = form_for :user, :url => {:controller => 'users', :action => 'create'} do |f|
+    = label_tag(:email, "Enter your email to secure your bitcoin privacy")
+    = email_field(:user, :email)
+    = submit_tag("Get Access")
+    %p
+      %em No spam, ever. Emails are never shared.
+<% end %>
+
+%section
+  %h3 FAQ
+
