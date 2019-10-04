@@ -1,0 +1,7 @@
+- if @user.errors.any?
+  %div.error__explanation
+    %div.alert.alert--danger
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li = msg
+

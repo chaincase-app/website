@@ -24,9 +24,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user, notice: 'User was successfully created.'
-    else
-      render :new
+      redirect_to "/", notice: 'Updates coming your way!'
+      # no else, worst case, user already exists. Else, form should capture it
     end
   end
 

@@ -9,6 +9,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload', defer: 'defer'
   %body{class: "#{controller_name} #{action_name}"}
     .content
+      - if flash.count > 0
+        %section
+          - flash.each do |msg_type, msg|
+            %div.alert(class="alert-#{msg_type}")= msg
       = yield
       %section
         = render 'layouts/footer'
