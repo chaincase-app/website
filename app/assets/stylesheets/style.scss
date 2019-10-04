@@ -43,6 +43,18 @@ html, body {
   font-kerning: normal;
 }
 
+.side-by-side {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.copy {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+
 //
 // Base styles // bootstratp 4 alerts
 //
@@ -56,7 +68,7 @@ html, body {
 .alert {
   margin-top: 1rem;
   position: relative;
-  padding: 1rem 1rem;
+  padding: .5rem .5rem;
   border:  2px solid transparent;
   border-radius: .5rem;
 }
@@ -73,24 +85,45 @@ html, body {
 // Expand the right padding and account for the close button's positioning.
 
 .alert-dismissible {
-  padding-right: 1rem;
+  padding-right: .5rem;
 
   // Adjust close link position
   .close {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 1rem 1rem;
+    padding: .5rem .5rem;
     color: inherit;
   }
 }
 
-.alert-success {
+.alert-success, input[type="submit"] {
     color: #155724;
     background-color: #d4edda;
     border-color: #c3e6cb;
 }
 
+// form
+input, label {
+  display: block;
+  font-size: 1rem;
+}
+
+input,
+textarea,
+select,
+.uneditable-input {
+  border: 1px solid #bbb;
+  border-radius: .5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  padding: .5rem .5rem;
+}
+
+input {
+  height: auto !important;
+}
 
 .highlight {
   border-radius: 1rem;
@@ -319,6 +352,10 @@ $the_tabstop: 28.3vw;
   .intro__details {
     margin-left: 29.5%;
   }
+
+  .copy {
+    flex: 1;
+  }
 }
 
 a {
@@ -382,6 +419,8 @@ footer pre {
     padding-right: $line-height * .5rem;
   }
 }
+
+
 
 @media screen and (max-width: 800px) {
   $mobile-heading-scale: 1.1;

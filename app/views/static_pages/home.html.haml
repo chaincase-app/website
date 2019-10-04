@@ -1,4 +1,4 @@
-%section#intro.copy
+%section#intro
   .intro__content
     %span
       A mobile-first privacy wallet unlike anything you've seen 
@@ -11,25 +11,23 @@
       Fungible, private bitcoin for all. Powered by
       %a{href: "https://wasabiwallet.io"} WasabiWallet
 
-%section
-  %h3 Anonymous Peer-to-Peer Networking
-  %p Every networked message is sent over Tor. Nobody, not your ISP, not the CoinJoin server, nor your Bitcoin peers can find out who you are making networked connections with.
+%div.side-by-side
+  %section.copy
+    %h3 Anonymous Peer-to-Peer Networking
+    %p Every networked message is sent over Tor. Nobody, not your ISP, not the CoinJoin server, nor your Bitcoin peers can find out who you are making networked connections with.
 
-  %h3 On-Chain Obfuscation
-  %p Blockchain anonymity powered by math proven by 50,000 coins successfully tumbled using Chaumian CoinJoin. The central tumbler never knows who you are. Keys are always safe on hardware.
+    %h3 On-Chain Obfuscation
+    %p Blockchain anonymity powered by math proven by 50,000 coins successfully tumbled using Chaumian CoinJoin. The central tumbler never knows who you are. Keys are always safe on hardware.
 
-  %h3 Privacy-Preserving Bitcoin Light Client
-  %p Chaincase uses compact block filters taking advantage of BIP 158 to realize many privacy benefits of a traditional full node without the prohibitive resource requirements to run.
+    %h3 Privacy-Preserving Bitcoin Light Client
+    %p Chaincase uses compact block filters taking advantage of BIP 158 to realize many privacy benefits of a traditional full node without the prohibitive resource burden of running one.
 
-%section
-  %h3 Stay Tuned
-  = form_for :user, :url => {:controller => 'users', :action => 'create'} do |f|
-    = label_tag :email, "Enter your email to secure your bitcoin privacy"
-    = email_field :user, :email, placeholder: "d@ngould.dev"
-    = submit_tag "Get Access" 
-    %p
-      %em No spam, ever. Emails are never shared.
-
-%section
-  %h3 FAQ
+  %section.copy
+    %h3 Stay Tuned
+    = form_for :user, :url => {:controller => 'users', :action => 'create'} do |f|
+      = label_tag :email, "Enter your email to get privacy before anyone else"
+      = email_field :user, :email, placeholder: "d@ngould.dev"
+      = submit_tag "Get Access" 
+      %p
+        %em No spam, ever. Emails are never shared.
 
