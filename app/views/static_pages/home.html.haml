@@ -1,7 +1,7 @@
 %section#intro
   .intro__content
     %span
-      A mobile-first privacy wallet unlike anything you've seen 
+      A mobile-first privacy wallet unlike anything you've ever seen before
 
     %h1.intro__title
       Chaincase
@@ -25,7 +25,7 @@
   %section.copy
     %h3 Stay Tuned
     = form_for :user, :url => {:controller => 'users', :action => 'create'} do |f|
-      = label_tag :email, "Enter your email to get privacy before anyone else"
+      = label_tag :email, "Enter your email to go private before anyone else"
       = email_field :user, :email, placeholder: "d@ngould.dev"
       = submit_tag "Get Access" 
       %p

@@ -301,7 +301,7 @@ section {
 }	
 
 
-$the_tabstop: 28.3vw;
+$the_tabstop: 50vw;
 
 .intro__content {
   padding-top: 1rem;
@@ -310,7 +310,7 @@ $the_tabstop: 28.3vw;
 
   & > span:first-child {
     box-sizing: border-box;
-    padding-left: 8vw;
+    padding-left: 4vw;
     text-align: right;
     width: $the_tabstop;
     display: inline-block;
@@ -343,14 +343,14 @@ $the_tabstop: 28.3vw;
 
 @media screen and (min-width: 1280px) {
   .intro__title {
-    font-size: 187px;
+    font-size: 208px;
   }
 
   .intro__content > span:first-child {
-    width: 29.5%;
+    width: 54%;
   }
   .intro__details {
-    margin-left: 29.5%;
+    margin-left: 54%;
   }
 
   .copy {
@@ -411,7 +411,7 @@ footer pre {
 @media screen and (max-width: 1000px) {
 
   .intro__title {
-    font-size: 14.5vw;
+    font-size: 15.7vw;
   }
 
   .content {
