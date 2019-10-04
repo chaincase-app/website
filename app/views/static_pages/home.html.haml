@@ -25,11 +25,10 @@
   %h3 Stay Tuned
   = form_for :user, :url => {:controller => 'users', :action => 'create'} do |f|
     = label_tag(:email, "Enter your email to secure your bitcoin privacy")
-    = email_field(:user, :email)
+    = email_field(:user, :email, placeholder: "d@ngould.dev")
     = submit_tag("Get Access")
     %p
       %em No spam, ever. Emails are never shared.
-<% end %>
 
 %section
   %h3 FAQ
