@@ -36,7 +36,7 @@ $line-height: 1.1;
 }
 
 html, body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
 	font-size: $base-font-size;
 	font-weight: 400;
   line-height: $line-height;
@@ -380,25 +380,21 @@ footer pre {
 }
 
 /* Fonts! */
-
 @font-face {
-    font-family: 'Public Sans';
-    src: url('publicsans-bold-webfont.woff2') format('woff2'),
-         url('publicsans-bold-webfont.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://rsms.me/inter/font-files/Inter-Regular.woff2?v=3.10") format("woff2"),
+       url("https://rsms.me/inter/font-files/Inter-Regular.woff?v=3.10") format("woff");
 }
 
-
-
-
 @font-face {
-    font-family: 'Public Sans';
-    src: url('publicsans-regular-webfont.woff2') format('woff2'),
-         url('publicsans-regular-webfont.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-
-}
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://rsms.me/inter/font-files/Inter-Bold.woff2?v=3.10") format("woff2"),
+       url("https://rsms.me/inter/font-files/Inter-Bold.woff?v=3.10") format("woff");
+ }
 
