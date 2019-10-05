@@ -19,8 +19,9 @@ production:
   host: ''
   adapter: postgresql
   encoding: utf8
-  database: postgres
+  database: chaincase
   pool: 5
+  host: localhost
   username: <%= Rails.application.credentials.db_user %>
   password: <%= Rails.application.credentials.db_pass %>
 
