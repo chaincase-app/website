@@ -60,6 +60,7 @@ html, body {
   text-align: center;
   input[type="email"] {
     width: 35vw;
+    -webkit-appearance: none;
   }
   input {
     display: inline-block;
