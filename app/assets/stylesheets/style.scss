@@ -25,7 +25,7 @@ $monospace: Menlo,Consolas,Liberation Mono,Courier,monospace;
 	-o-transition: .15s ease-in;
 }
 
-$base-font-size: 18px;
+$base-font-size: 20px;
 $line-height: 1.1;
 
 *, body {
@@ -43,15 +43,25 @@ html, body {
   font-kerning: normal;
 }
 
-.side-by-side {
-  display: flex;
-  flex-flow: row wrap;
+.copy {
+  display: flex; 
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  h3, p {
+    margin-top: 0;
+    flex: 1 1 0px;
+  }
 }
 
-.copy {
-  flex: 1 1 auto;
-  box-sizing: border-box;
-  padding: 5px;
+.subscribe {
+  text-align: center;
+  input[type="email"] {
+    width: 35vw;
+  }
+  input {
+    display: inline-block;
+  }
 }
 
 
@@ -70,7 +80,7 @@ html, body {
   position: relative;
   padding: .5rem .5rem;
   border:  2px solid transparent;
-  border-radius: .5rem;
+  border-radius: 3px; 
 }
 
 // Headings for larger alerts
@@ -114,11 +124,10 @@ textarea,
 select,
 .uneditable-input {
   border: 1px solid #bbb;
-  border-radius: .5rem;
-  width: 100%;
+  border-radius: 3px;
   margin-bottom: 1rem;
   box-sizing: border-box;
-  padding: .5rem .5rem;
+  padding: 1rem;
 }
 
 input {
@@ -126,13 +135,13 @@ input {
 }
 
 .highlight {
-  border-radius: 1rem;
+  border-radius: 3px;
   line-height: 1;
 }
 
 pre {
   padding: 1rem * $line-height;
-  font-weight: 700;
+  font-weight: 400;
   font-family: $monospace;
   font-size: 0.8rem;
 }
@@ -172,7 +181,9 @@ img {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-weight: 700;
+  font-family: 'Oswald', Impact, 'Franklin Gothic Bold', sans-serif;
+  font-weight: 400;
+  line-height: $line-height * 1.2;
   margin-bottom: $line-height * 1rem;
 }
 
@@ -269,7 +280,7 @@ li {
 }
 
 // Set heading size using modular scale
-$heading-scale: 1.18;
+$heading-scale: 1.6;
 $mobile-font-size: 16px;
 
 @function pow($number, $exponent) {
@@ -300,62 +311,19 @@ section {
   margin-bottom: $line-height * 2rem;
 }	
 
-
-$the_tabstop: 50vw;
-
 .intro__content {
   padding-top: 1rem;
-  font-weight: 700;
+  font-weight: 400;
   max-width: 100vw;
-
-  & > span:first-child {
-    box-sizing: border-box;
-    padding-left: 4vw;
-    text-align: right;
-    width: $the_tabstop;
-    display: inline-block;
-  }
 
   h2 {
     margin-top: 1rem;
-    font-size: 1rem;
-  }
-
-  p {
-    margin-top: 1rem;
-    font-weight: 400;
   }
 }
 
 .intro__title {
-  box-sizing: border-box;
-  text-transform: uppercase;
-  line-height: 0.8;
-  /* magic number to approximate full */
-  font-size: 14.5vw;
-  margin: 0;
-	display: inline-block;
-}
-
-.intro__details {
-    margin-left: $the_tabstop;
-}
-
-@media screen and (min-width: 1280px) {
-  .intro__title {
-    font-size: 208px;
-  }
-
-  .intro__content > span:first-child {
-    width: 54%;
-  }
-  .intro__details {
-    margin-left: 54%;
-  }
-
-  .copy {
-    flex: 1;
-  }
+  font-family: 'Inter', Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 3rem;
 }
 
 a {
@@ -409,26 +377,29 @@ footer pre {
 /* tablet / small screen */
 /* phones */
 @media screen and (max-width: 1000px) {
-
-  .intro__title {
-    font-size: 15.7vw;
-  }
-
   .content {
     padding-left: $line-height * .5rem;
     padding-right: $line-height * .5rem;
+  }
+
+  .copy {
+    display: block;
   }
 }
 
 
 
 @media screen and (max-width: 800px) {
-  $mobile-heading-scale: 1.1;
+  $mobile-heading-scale: 1.3;
   $mobile-font-size: 16px;
 
   html, body {
     font-size: $mobile-font-size;
   }
+
+.subscribe input[type="email"] {
+    width: 65vw;
+}
 
   // for mobile only!
   .m-full-width {
@@ -456,7 +427,7 @@ footer pre {
   }
 
   .highlight {
-    border-radius: 0;
+    border-radius: 3px;
     width: 100vw;
     position: relative;
     left: 50%;
@@ -479,10 +450,20 @@ footer pre {
 
 @font-face {
   font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 700;
+  font-style:  italic;
+  font-weight: 400;
   font-display: swap;
-  src: url("https://rsms.me/inter/font-files/Inter-Bold.woff2?v=3.10") format("woff2"),
-       url("https://rsms.me/inter/font-files/Inter-Bold.woff?v=3.10") format("woff");
- }
+  src: url("https://rsms.me/inter/font-files/Inter-Italic.woff2?v=3.10") format("woff2"),
+       url("https://rsms.me/inter/font-files/Inter-Italic.woff?v=3.10") format("woff");
+}
 
+
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v26/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiYySUhiCXAA.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}

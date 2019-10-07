@@ -1,32 +1,35 @@
 %section#intro
   .intro__content
-    %span
-      A mobile-first privacy wallet unlike anything you've ever seen before
-
     %h1.intro__title
-      Chaincase
+      ChainCase
     %h2.intro__details
-      %i "Bitcoin works best for you when nobody else is capable of moving or freezing your funds without your approval." &mdash; Alena Vranova
+      The accesible, private, and practical way to use Bitcoin on your phone.
     %p.intro__details
-      Fungible, private bitcoin for all. Powered by #{link_to "WasabiWallet", "https://wasabiwallet.io"}.
+      Powered by #{link_to "WasabiWallet", "https://wasabiwallet.io"}.
 
-%div.side-by-side
-  %section.copy
-    %h3 Anonymous Peer-to-Peer Networking
-    %p Every networked message is sent over Tor. Nobody, not your ISP, not the CoinJoin server, nor your Bitcoin peers can find out who you are making networked connections with.
+%section.copy
+  %h3
+    Anonymous <br/>
+    Peer-to-Peer <br/>
+    Networking
+  %p All data in transit is sent encrypted over Tor. <br/>  Nobody on the network even knows you're using Bitcoin.
 
-    %h3 On-Chain Obfuscation
-    %p Blockchain anonymity powered by math proven by 50,000 coins successfully tumbled using Chaumian CoinJoin. The central tumbler never knows who you are. Keys are always safe on hardware.
+%section.copy
+  %h3
+    On-Chain <br/>
+    Obfuscation
+  %p Our distributed mixing software keeps public blockchain data private from any single bad actor. Keys are always safe on hardware. Proven by more than ₿50,000 in successful CoinJoin rounds.
 
-    %h3 Privacy-Preserving Bitcoin Light Client
-    %p Chaincase uses compact block filters taking advantage of BIP 158 to realize many privacy benefits of a traditional full node without the prohibitive resource burden of running one.
+%section.copy
+  %h3 Privacy-Preserving <br/> Light Client
+  %p Chaincase uses compact block filters (aka Neutrino) to keep your data private from curious peers.
 
-  %section.copy
-    %h3 Stay Tuned
-    = form_for :user, :url => {:controller => 'users', :action => 'create'} do |f|
-      = label_tag :email, "Enter your email to go private before anyone else"
-      = email_field :user, :email, placeholder: "d@ngould.dev"
-      = submit_tag "Get Access" 
-      %p
-        %em No spam, ever. Emails are never shared.
+%section.subscribe
+  %h4 Go private before anyone else.
+  = form_for :user, :url => {:controller => 'users', :action => 'create'} do |f|
+    = label_tag :email, "Enter your email to stay tuned."
+    = email_field :user, :email, placeholder: "d@ngould.dev"
+    = submit_tag "Get Access" 
+    %p
+      %em No spam, ever. Emails are never shared.
 
