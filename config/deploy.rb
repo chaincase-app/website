@@ -1,6 +1,6 @@
 # config valid for current version and patch releases of Capistrano
 set :application, "chaincase"
-set :repo_url, "git@github.com:chain-case/chaincase.cash.git"
+set :repo_url, "git@github.com:chaincase-cash/chaincase.cash.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
