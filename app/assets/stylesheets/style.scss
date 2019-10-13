@@ -9,21 +9,19 @@ Stylesheet for Daniel Gould
 
 $off-white: #fff;
 $off-black: #020202;
-$crimson: #cf3f61;
 
-$imperial: #A57FC4;
-$royal-purple: #604291;
-
+$royal-purple: #7155A4;
 $blue: #4c9ad4;
 
 $monospace: Menlo,Consolas,Liberation Mono,Courier,monospace;
-
+/*
 * {
 	transition: .15s ease-in;
 	-webkit-transition: .15s ease-in;
 	-moz-transition: .15s ease-in;
 	-o-transition: .15s ease-in;
 }
+*/
 
 $base-font-size: 20px;
 $line-height: 1.1;
@@ -41,7 +39,36 @@ html, body {
 	font-weight: 400;
   line-height: $line-height;
   font-kerning: normal;
+  overflow-x: hidden;
 }
+
+@mixin full-width-bar {
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem;
+}
+
+.intro {
+  @include full-width-bar;
+  background: $royal-purple;
+  color: $off-white;
+}
+
+.intro__content {
+  padding-top: 1rem;
+  font-weight: 400;
+  max-width: 100vw;
+
+  h2 {
+    margin-top: 1rem;
+  }
+}
+
+.intro__title {
+  font-family: 'Inter', Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 3rem;
+}
+
 
 .copy {
   margin-top: 6rem;
@@ -137,49 +164,7 @@ input {
   height: auto !important;
 }
 
-.highlight {
-  border-radius: 3px;
-  line-height: 1;
-}
-
-pre {
-  padding: 1rem * $line-height;
-  font-weight: 400;
-  font-family: $monospace;
-  font-size: 0.8rem;
-}
-
-pre code {
-    white-space: pre-wrap;       /* css-3 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
-  }
-
-figure {
-  overflow-wrap: break-word;
-  margin: 0 auto;
-}
-
 img {
-  max-width: 100%;
-}
-
-.logo {
-  display: inline;
-  margin-top: 0;
-  margin-bottom: -.2rem;
-  width: 2rem;
-}
-
-.full-width {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
   max-width: 100%;
 }
 
@@ -206,52 +191,6 @@ h1 {
   margin-bottom: 0;
 }
 
-time + * {
-  margin-top: $line-height * 2rem;
-}
-
-header * {
-  margin-top: $line-height * 1rem;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
-header {
-  font-size: 60px;
-  margin: 0 auto;
-  max-width: 740px;
-}
-
-header a:visited,
-header a {
-  color: $off-black;
-}
-
-header a:hover {
-  text-decoration: none;
-}
-
-article {
-  margin: 0 auto;
-  max-width: 740px;
-
-  img {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-}
-
-figure {
-  text-align: center;
-}
-
-time {
-  color: #777;
-}
-
 .content {
   max-width: 1280px;
   margin: 0 auto;
@@ -261,16 +200,6 @@ time {
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
 
-}
-
-blockquote {
-  margin-left: 1rem;
-  padding-left: 0.5rem;;
-  border-left: 3px solid #ccc;
-}
-
-blockquote p {
-  hanging-punctuation: -0.5rem;
 }
 
 ul, ol {
@@ -314,67 +243,15 @@ section {
   margin-bottom: $line-height * 2rem;
 }	
 
-.intro__content {
-  padding-top: 1rem;
-  font-weight: 400;
-  max-width: 100vw;
-
-  h2 {
-    margin-top: 1rem;
-  }
-}
-
-.intro__title {
-  font-family: 'Inter', Helvetica, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 3rem;
-}
-
 a {
-  color: $blue;
-  text-decoration: none;
-}
-
-a:visited {
-  color: $royal-purple;
-}
-
-a:hover,
-.active a {
-  text-decoration: underline;
+  color: inherit;
   text-decoration-skip: edges;
   -webkit-text-decoration-skip: edges;
-
 }
 
-/*
-footer
-*/
+a:hover {
+  text-decoration: none;
 
-footer code,
-footer pre { background: $off-white; color: #ccc;
-	border-bottom: 1px solid #d8dee9;
-}
-
-footer code {
-	padding: 2px 4px;
-	vertical-align: text-bottom;
-}
-
-footer pre {
-	padding: 16px;
-	box-shadow: 0 1px 1px 1px #ccc;
-}
-
-.string {
-	color: #333;
-}
-
-.bracket {
-	color: #ea5f27;
-}
-
-.linenum {
-	color: #fbfef9;
 }
 
 /* tablet / small screen */
@@ -400,9 +277,9 @@ footer pre {
     font-size: $mobile-font-size;
   }
 
-.subscribe input[type="email"] {
-    width: 65vw;
-}
+  .subscribe input[type="email"] {
+      width: 65vw;
+  }
 
   // for mobile only!
   .m-full-width {
@@ -421,23 +298,8 @@ footer pre {
     }
   }
 
-  article {
-    max-width: 100%;
-  }
-
   ul, ol {
     list-style-position: inside;
-  }
-
-  .highlight {
-    border-radius: 3px;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    box-sizing: border-box;
   }
 }
 
@@ -450,16 +312,6 @@ footer pre {
   src: url("https://rsms.me/inter/font-files/Inter-Regular.woff2?v=3.10") format("woff2"),
        url("https://rsms.me/inter/font-files/Inter-Regular.woff?v=3.10") format("woff");
 }
-
-@font-face {
-  font-family: 'Inter';
-  font-style:  italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("https://rsms.me/inter/font-files/Inter-Italic.woff2?v=3.10") format("woff2"),
-       url("https://rsms.me/inter/font-files/Inter-Italic.woff?v=3.10") format("woff");
-}
-
 
 /* latin */
 @font-face {

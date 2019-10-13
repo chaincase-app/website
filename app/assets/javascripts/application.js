@@ -13,8 +13,3 @@
 //= require rails-ujs
 //= require turbolinks
 //= require init
-
-document.addEventListener('turbolinks:load', function () {
-  // these short circuit if not on the selected page
-  document.querySelector('.static_pages.home') && main();
-});
