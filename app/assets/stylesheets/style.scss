@@ -30,17 +30,18 @@ html, body {
 @mixin full-width-bar {
   margin: 0 -9999rem;
   /* add back negative margin value */
-  padding: 0.25rem 9999rem;
+  padding: 0 9999rem;
 }
 
 .intro {
   @include full-width-bar;
   background: $royal-purple;
   color: $off-white;
+  overflow: auto;
+  padding-bottom: $line-height * 3rem;
 }
 
 .intro__content {
-  padding-top: 1rem;
   font-weight: 400;
   max-width: 100vw;
 
@@ -55,7 +56,7 @@ html, body {
 }
 
 .copy {
-  margin-top: 6rem;
+  margin-top: $line-height * 6rem;
   display: flex; 
   display: -webkit-flex;
   align-items: center;
@@ -66,15 +67,21 @@ html, body {
   }
 }
 
+.royal-purple {
+  color: $royal-purple;
+}
+
+.privacy-policy {
+  opacity: 0.6;
+}
+
 .subscribe {
   margin-top: 6rem;
-  text-align: center;
   input[type="email"] {
     width: 35vw;
-    -webkit-appearance: none;
   }
   input {
-    display: inline-block;
+    display: block;
   }
 }
 
@@ -122,9 +129,20 @@ html, body {
 }
 
 .alert-success, input[type="submit"] {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
+  color: $off-white;
+  background-color: $royal-purple;
+  border-color: $off-white;
+  transition:all 0.3s ease;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+input:hover {
+  color: $royal-purple;
+  background-color: $off-white;
+  border-color: $royal-purple;
 }
 
 // form
@@ -146,6 +164,9 @@ select,
 
 input {
   height: auto !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 img {
@@ -224,6 +245,7 @@ body {
 }	
 
 section { 
+  margin-top: $line-height * 2rem;
   margin-bottom: $line-height * 2rem;
 }	
 
@@ -231,6 +253,10 @@ a {
   color: inherit;
   text-decoration-skip: edges;
   -webkit-text-decoration-skip: edges;
+}
+
+a, input {
+  transition:all 0.3s ease;
 }
 
 a:hover {
@@ -295,6 +321,15 @@ a:hover {
   font-display: swap;
   src: url("https://rsms.me/inter/font-files/Inter-Regular.woff2?v=3.10") format("woff2"),
        url("https://rsms.me/inter/font-files/Inter-Regular.woff?v=3.10") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://rsms.me/inter/font-files/Inter-Italic.woff2?v=3.10") format("woff2"),
+       url("https://rsms.me/inter/font-files/Inter-Italic.woff?v=3.10") format("woff");
 }
 
 /* latin */
