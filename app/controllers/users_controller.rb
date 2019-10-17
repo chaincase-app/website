@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_url, notice: 'Updates coming your way!'
     else
-      redirect_to root_url, notice: "Failed to save. If you're not already signed up, try again"
+      redirect_to root_url, notice: "Failed to save. If you're not already signed up, please try again."
     end
   end
 
