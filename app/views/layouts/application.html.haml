@@ -6,6 +6,7 @@
     %title= full_title(yield(:title))
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link{rel: "stylesheet", href: "https://use.typekit.net/acg0ria.css"}
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload', defer: 'defer'
   %body{class: "#{controller_name} #{action_name}"}
     .content

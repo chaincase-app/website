@@ -1,12 +1,12 @@
 $off-white: #fff;
 $off-black: #020202;
 
-$royal-purple: #7155A4;
-$blue: #4c9ad4;
+$royal-purple: #5344f4;
+$chaincase-orange: #f08c34;
 
 $monospace: Menlo, Consolas, Liberation Mono, Courier, monospace;
 $body-font: 'Inter', Helvetica, Arial, sans-serif;
-$heading-font: 'Oswald', Impact, 'Franklin Gothic Bold', sans-serif;
+$heading-font: univia-pro, 'Oswald', Impact, 'Franklin Gothic Bold', sans-serif;
 
 $base-font-size: 20px;
 $line-height: 1.1;
@@ -51,8 +51,20 @@ html, body {
 }
 
 .intro__title {
-  font-family: $body-font; 
-  font-size: 3rem;
+  margin-top: 3.3rem;
+
+  * {
+    display: inline;
+    font-size: 3rem;
+    font-family: $heading-font; 
+  }
+
+  img {
+    display: inline-block;
+    height: 4rem;
+    margin-bottom: 0;
+    vertical-align: sub;
+  }
 }
 
 .copy {
@@ -142,7 +154,7 @@ input[type="submit"] {
 input:hover {
   color: $royal-purple;
   background-color: $off-white;
-  border-color: $royal-purple;
+  border-color: $chaincase-orange;
 }
 
 // form
@@ -175,7 +187,7 @@ img {
 
 h1,h2,h3,h4,h5,h6 {
   font-family: $heading-font;
-  font-weight: 400;
+  font-weight: 600;
   line-height: $line-height * 1.2;
   margin-bottom: $line-height * 1rem;
 }
@@ -217,7 +229,7 @@ li {
 }
 
 // Set heading size using modular scale
-$heading-scale: 1.6;
+$heading-scale: 1.66;
 $mobile-font-size: 16px;
 
 @function pow($number, $exponent) {
