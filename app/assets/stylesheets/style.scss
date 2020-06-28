@@ -8,7 +8,7 @@ $monospace: Menlo, Consolas, Liberation Mono, Courier, monospace;
 $body-font: 'Inter', Helvetica, Arial, sans-serif;
 $heading-font: univia-pro, 'Oswald', Impact, 'Franklin Gothic Bold', sans-serif;
 
-$base-font-size: 20px;
+$base-font-size: 22px;
 $line-height: 1.1;
 
 *, body {
@@ -39,6 +39,8 @@ html, body {
   color: $off-white;
   overflow: auto;
   padding-bottom: $line-height * 3rem;
+  box-sizing: border-box;
+  height: 100vh;
 }
 
 .intro__content {
@@ -47,6 +49,13 @@ html, body {
 
   h2 {
     margin-top: 1rem;
+    position: absolute;
+    top: $line-height * 8rem;
+    }
+
+  p {
+    position: absolute;
+    bottom: $line-height * 3rem;
   }
 }
 
@@ -55,16 +64,15 @@ html, body {
 
   * {
     display: inline;
-    font-size: 3rem;
     font-family: $heading-font; 
   }
 
   img {
     display: inline-block;
-    height: 4rem;
-    margin-bottom: 0;
-    margin-right: .8rem;
-    vertical-align: sub;
+    height: 2.2rem;
+    padding-bottom: .1rem;
+    margin-right: .4rem;
+    vertical-align: middle;
   }
 }
 
@@ -230,7 +238,7 @@ li {
 }
 
 // Set heading size using modular scale
-$heading-scale: 1.66;
+$heading-scale: 1.44;
 $mobile-font-size: 16px;
 
 @function pow($number, $exponent) {
@@ -249,6 +257,11 @@ $mobile-font-size: 16px;
   h#{$i} {
     font-size: $base-font-size * pow($heading-scale, (6 - $i));
   }
+}
+
+h1 {
+  /* same size as h4 */
+  font-size: $base-font-size * pow($heading-scale, 2);
 }
 
 
@@ -319,6 +332,15 @@ a:hover {
     h#{$i} {
       font-size: $base-font-size * pow($mobile-heading-scale, (6 - $i));
     }
+  }
+
+  h1 {
+    /* same size as h4 */
+    font-size: $base-font-size * pow($mobile-heading-scale, 2);
+  }
+
+  .intro__title img {
+    padding-bottom: .6rem;
   }
 
   ul, ol {
