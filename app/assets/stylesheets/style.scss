@@ -42,6 +42,7 @@ html, body {
   height: 100vh;
 }
 
+$badge-scale: 2.6;
 .intro__content {
   font-weight: 400;
   max-width: 100vw;
@@ -50,7 +51,14 @@ html, body {
     margin-top: 1rem;
     position: relative;
     top: $line-height * 2rem;
-    }
+  }
+
+  .app-store-badge {
+     margin-top: $line-height * 4rem;
+     img {
+       height: $base-font-size * $badge-scale;
+     }
+  }
 
   p {
     position: absolute;
@@ -340,6 +348,10 @@ a:hover {
 
   .intro__title img {
     padding-bottom: .6rem;
+  }
+
+  .intro__content .app-store-badge img {
+    height: $mobile-font-size * $badge-scale;
   }
 
   ul, ol {
