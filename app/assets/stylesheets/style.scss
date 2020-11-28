@@ -156,7 +156,8 @@ $badge-scale: 2.6;
   }
 }
 
-.alert-success, input[type="submit"] {
+.alert-success,
+input[type="submit"] {
   color: $off-white;
   background-color: $royal-purple;
   border-color: $off-white;
@@ -196,6 +197,17 @@ input {
   -moz-appearance: none;
   appearance: none;
 }
+
+// style the anti-bot input
+.emailoctopus-form-row-hp {
+    position: absolute;
+    left: -5000px;
+}
+
+.grecaptcha-badge {
+    display: none !important;
+}
+
 
 img {
   max-width: 100%;
