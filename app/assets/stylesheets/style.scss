@@ -108,6 +108,9 @@ $badge-scale: 2.6;
   input[type="email"] {
     width: 35vw;
   }
+  input[type="text"] {
+    width: 35vw;
+  }
   input {
     display: block;
   }
@@ -333,6 +336,9 @@ a:hover {
   }
 
   .subscribe input[type="email"] {
+      width: 65vw;
+  }
+  .subscribe input[type="text"] {
       width: 65vw;
   }
 
