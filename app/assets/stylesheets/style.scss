@@ -105,12 +105,13 @@ $badge-scale: 2.6;
 
 .subscribe {
   margin-top: 6rem;
-  input[type="email"] {
-    width: 35vw;
-  }
+  input[type="email"], 
   input[type="text"] {
     width: 35vw;
   }
+  // input[type="text"] {
+  //   width: 35vw;
+  // }
   input {
     display: block;
   }
@@ -335,12 +336,14 @@ a:hover {
     font-size: $mobile-font-size;
   }
 
-  .subscribe input[type="email"] {
+  .subscribe 
+    input[type="email"], 
+    input[type="text"] {
       width: 65vw;
   }
-  .subscribe input[type="text"] {
-      width: 65vw;
-  }
+  // .subscribe input[type="text"] {
+  //     width: 65vw;
+  // }
 
   // for mobile only!
   .m-full-width {
