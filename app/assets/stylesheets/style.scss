@@ -105,7 +105,8 @@ $badge-scale: 2.6;
 
 .subscribe {
   margin-top: 6rem;
-  input[type="email"] {
+  input[type="email"], 
+  input[type="text"] {
     width: 35vw;
   }
   input {
@@ -332,8 +333,11 @@ a:hover {
     font-size: $mobile-font-size;
   }
 
-  .subscribe input[type="email"] {
+  .subscribe {
+    input[type="email"], 
+    input[type="text"] {
       width: 65vw;
+    }
   }
 
   // for mobile only!
