@@ -333,10 +333,11 @@ a:hover {
     font-size: $mobile-font-size;
   }
 
-  .subscribe 
+  .subscribe {
     input[type="email"], 
     input[type="text"] {
       width: 65vw;
+    }
   }
 
   // for mobile only!
