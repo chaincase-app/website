@@ -17,7 +17,7 @@ service postgresql start
 ```
 macOS:
 ```console
-brew service start postgresql
+brew services start postgresql
 ```
 
 [windows](https://stackoverflow.com/questions/36629963/how-to-start-postgresql-on-windows):
