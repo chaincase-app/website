@@ -49,18 +49,17 @@ $badge-scale: 2.6;
 
   h2 {
     margin-top: 1rem;
-    position: relative;
     top: $line-height * 2rem;
   }
 
   .app-store-badge {
-     margin-top: $line-height * 4rem;
+     margin-top: $line-height * 1rem;
      img {
        height: $base-font-size * $badge-scale;
      }
   }
 
-  p {
+  .intro__content-bottom {
     position: absolute;
     bottom: $line-height * 3rem;
   }
