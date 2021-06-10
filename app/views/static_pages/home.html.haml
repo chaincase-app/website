@@ -5,11 +5,17 @@
       %h1
         Chaincase
     %div.intro__details
-      %h2 Tired of being tracked on Bitcoin? We can help.
+      %h2 Tired of being tracked on&nbsp;Bitcoin? We&nbsp;can&nbsp;help.
       %h5 Get seamless privacy protection on iOS with one download
-      %p ✅ Tor Netwok Privacy
-      %p ✅ Neutrino Private Sync
-      %p ✅ CoinJoin &amp; Coin Control Blockchain Privacy
+      %div.bullet
+        = image_tag('icon-check.svg')
+        %span Tor Netwok Privacy
+      %div.bullet
+        = image_tag('icon-check.svg')
+        Neutrino Private Sync
+      %div.bullet
+        = image_tag('icon-check.svg')
+        CoinJoin &amp; Coin Control Blockchain Privacy
     %div.app-store-badge
       = link_to image_tag( 'download-on-the-app-store-badge.svg'), 'https://testflight.apple.com/join/jBN5i0b1'
     %br
