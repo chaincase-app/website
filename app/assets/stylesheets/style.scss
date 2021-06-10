@@ -335,8 +335,7 @@ a:hover {
   $mobile-heading-scale: 1.1;
   $mobile-font-size: 16px;
 
-
-  .intro__content-bottom {
+  .intro__content .intro__content-bottom {
     position: static;
     bottom: unset;
   }
