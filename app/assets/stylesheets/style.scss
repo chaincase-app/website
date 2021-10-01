@@ -70,7 +70,7 @@ $badge-scale: 2.6;
 
   * {
     display: inline;
-    font-family: $heading-font; 
+    font-family: $heading-font;
   }
 
   img {
@@ -91,7 +91,7 @@ $badge-scale: 2.6;
 
 .copy {
   margin-top: $line-height * 6rem;
-  display: flex; 
+  display: flex;
   display: -webkit-flex;
   align-items: center;
   -webkit-align-items: center;
@@ -111,7 +111,7 @@ $badge-scale: 2.6;
 
 .subscribe {
   margin-top: 6rem;
-  input[type="email"], 
+  input[type="email"],
   input[type="text"] {
     width: 35vw;
   }
@@ -136,7 +136,7 @@ $badge-scale: 2.6;
   position: relative;
   padding: .5rem .5rem;
   border:  2px solid transparent;
-  border-radius: 3px; 
+  border-radius: 3px;
 }
 
 // Headings for larger alerts
@@ -255,7 +255,7 @@ h1 {
 }
 
 ul, ol {
-  padding-left: 0; 
+  padding-left: 0;
   list-style-position: outside;
 }
 
@@ -294,12 +294,12 @@ h1 {
 body {
 	color: $off-black;
 	background-color: $off-white;
-}	
+}
 
-section { 
+section {
   margin-top: $line-height * 2rem;
   margin-bottom: $line-height * 2rem;
-}	
+}
 
 a {
   color: inherit;
@@ -345,7 +345,7 @@ a:hover {
   }
 
   .subscribe {
-    input[type="email"], 
+    input[type="email"],
     input[type="text"] {
       width: 65vw;
     }
@@ -361,7 +361,7 @@ a:hover {
     margin-left: -50vw !important;
     margin-right: -50vw !important;
   }
-  
+
   @for $i from 1 through 6 {
     h#{$i} {
       font-size: $base-font-size * pow($mobile-heading-scale, (6 - $i));
@@ -385,4 +385,3 @@ a:hover {
     list-style-position: inside;
   }
 }
-
