@@ -50,6 +50,9 @@ $badge-scale: 2.6;
   h2 {
     margin-top: 1rem;
     top: $line-height * 2rem;
+    font-size: 64px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
   }
 
   .app-store-badge {
@@ -93,6 +96,15 @@ $badge-scale: 2.6;
     vertical-align: -webkit-baseline-middle;
     margin-bottom: 0;
     margin-right: 10px;
+  }
+}
+
+.bullets {
+  display: flex;
+  flex-direction: row;
+
+  > .bullet {
+    margin-right: 30px;
   }
 }
 
@@ -342,9 +354,36 @@ a:hover {
   $mobile-heading-scale: 1.1;
   $mobile-font-size: 16px;
 
-  .intro__content .intro__content-bottom {
-    position: static;
-    bottom: unset;
+  .bullets {
+    flex-direction: column;
+
+    > .bullet {
+      margin-right: 0;
+    }
+  }
+
+  .intro__content {
+    h2 {
+      margin-bottom: 3rem;
+      font-size: 2.25rem;
+    }
+
+    h5 {
+      margin-bottom: 3rem;
+    }
+
+    .intro__content-bottom {
+      position: static;
+      bottom: unset;
+    }
+
+    .app-store-badge img {
+      height: $mobile-font-size * $badge-scale;
+    }
+  }
+
+  .intro__details {
+    margin-bottom: 3rem;
   }
 
   html, body {
@@ -384,11 +423,27 @@ a:hover {
     padding-bottom: .6rem;
   }
 
-  .intro__content .app-store-badge img {
-    height: $mobile-font-size * $badge-scale;
-  }
-
   ul, ol {
     list-style-position: inside;
+  }
+}
+
+/* Extra-large */
+
+@media screen and (min-widtH: 1441px) {
+  .intro__content {
+    h2 {
+      font-size: 96px;
+    }
+  }
+}
+
+@media screen and (min-width: 1441px) and (min-height: 1060px) {
+  .bullets {
+    flex-direction: column;
+
+    > .bullet {
+      margin-right: 0;
+    }
   }
 }
