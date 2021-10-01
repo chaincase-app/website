@@ -39,7 +39,7 @@ html, body {
   overflow: auto;
   padding-bottom: $line-height * 3rem;
   box-sizing: border-box;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 $badge-scale: 2.6;
@@ -57,11 +57,6 @@ $badge-scale: 2.6;
      img {
        height: $base-font-size * $badge-scale;
      }
-  }
-
-  .intro__content-bottom {
-    position: absolute;
-    bottom: $line-height * 3rem;
   }
 }
 
@@ -82,11 +77,23 @@ $badge-scale: 2.6;
   }
 }
 
-.bullet > img {
-  display: inline-block;
-  vertical-align: middle;
-  vertical-align: -moz-middle-with-baseline;
-  vertical-align: -webkit-baseline-middle;
+.bullet {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  > * {
+    margin-bottom: 0;
+  }
+
+  > img {
+    display: inline-block;
+    vertical-align: middle;
+    vertical-align: -moz-middle-with-baseline;
+    vertical-align: -webkit-baseline-middle;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
 }
 
 .copy {
