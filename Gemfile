@@ -12,7 +12,7 @@ gem 'rails', '5.2.2.1'
 # Provide Haml generators for rails
 gem 'haml-rails', '~> 1.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use SCSS for stylesheets
