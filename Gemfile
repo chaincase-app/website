@@ -8,7 +8,7 @@ end
 ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.2.2.1'
+gem 'rails', '5.2.4.5'
 # Provide Haml generators for rails
 gem 'haml-rails', '~> 1.0'
 # Use Puma as the app server
@@ -20,6 +20,8 @@ gem 'sassc-rails', '2.1.0'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
 # Required for cap deploy via net-ssh 4.0
 gem 'ed25519', '>= 1.2', '< 2.0'
