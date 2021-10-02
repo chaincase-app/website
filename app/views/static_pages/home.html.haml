@@ -19,9 +19,9 @@
     %div.app-store-badge
       = link_to image_tag( 'download-on-the-app-store-badge.svg'), 'https://testflight.apple.com/join/jBN5i0b1'
     %div
-      %p
-        Recipient of a grant from the
       #{link_to image_tag('hrf-logo.svg', title:"Human Rights Foundation", alt: "Human Rights Foundation logo", id: "hrf-logo"), 'https://hrf.org/hrfs-bitcoin-development-fund-announces-375-million-satoshis-across-10-q3-gifts/', target: :_blank}
+      %p
+        #{link_to "👆 HRF's Bitcoin Development Fund gave us a gift.", 'https://hrf.org/hrfs-bitcoin-development-fund-announces-375-million-satoshis-across-10-q3-gifts/', target: :_blank, style: "text-decoration: none;"}
     %br
     %p.intro__details.intro__content-bottom
       Join the #{link_to "Telegram Community", "https://t.me/chaincase", target: :_blank} and contribute on #{link_to "GitHub", "https://github.com/chaincase-app/Chaincase", target: :_blank}
