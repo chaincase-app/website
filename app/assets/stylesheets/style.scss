@@ -55,6 +55,10 @@ $badge-scale: 2.6;
 .intro__content {
   font-weight: 400;
   max-width: 100vw;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-beteween;
 
   h2 {
     top: $line-height * 2rem;
@@ -63,6 +67,10 @@ $badge-scale: 2.6;
     margin-top: 2rem;
   }
 
+}
+
+.intro__footer {
+  margin-top: auto;
 }
 
 .intro__title {
