@@ -37,15 +37,27 @@ html, body {
   background: $royal-purple;
   color: $off-white;
   overflow: auto;
-  padding-bottom: $line-height * 3rem;
   box-sizing: border-box;
   min-height: 100vh;
+
+  .button {
+    color: $off-white;
+    background: $chaincase-orange;
+
+    &:hover {
+
+    }
+  }
 }
 
 $badge-scale: 2.6;
 .intro__content {
   font-weight: 400;
   max-width: 100vw;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-beteween;
 
   h2 {
     top: $line-height * 2rem;
@@ -54,12 +66,10 @@ $badge-scale: 2.6;
     margin-top: 2rem;
   }
 
-  .app-store-badge {
-     margin-top: $line-height * 1rem;
-     img {
-       height: $base-font-size * $badge-scale;
-     }
-  }
+}
+
+.intro__footer {
+  margin-top: auto;
 }
 
 .intro__title {
@@ -181,22 +191,35 @@ $badge-scale: 2.6;
   }
 }
 
+.intro__content input[type="submit"] {
+  color: $off-white;
+  background-color: $chaincase-orange;
+  border: none;
+
+  &:hover {
+    color: $royal-purple;
+    background-color: $off-white;
+  }
+}
+
 .alert-success,
-input[type="submit"] {
+input[type="submit"],
+.button {
   color: $off-white;
   background-color: $royal-purple;
   border-color: $off-white;
   transition:all 0.3s ease;
 }
 
-input[type="submit"] {
+input[type="submit"],
+.button {
   cursor: pointer;
 }
 
 input:hover {
   color: $royal-purple;
   background-color: $off-white;
-  border-color: $chaincase-orange;
+  border-color: $royal-purple;
 }
 
 // form
@@ -359,6 +382,7 @@ a:hover {
   $mobile-font-size: 16px;
 
   .bullets {
+    display: none;
     flex-direction: column;
 
     > .bullet {
