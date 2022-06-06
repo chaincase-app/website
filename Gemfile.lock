@@ -106,6 +106,7 @@ GEM
       ruby_parser (~> 3.5)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    kramdown (2.1.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -231,6 +232,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   ed25519 (>= 1.2, < 2.0)
   haml-rails (~> 1.0)
+  kramdown (= 2.1.0)
   listen (>= 3.0.5, < 3.2)
   mimemagic!
   pg (>= 0.18, < 2.0)

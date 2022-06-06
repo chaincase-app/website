@@ -11,6 +11,8 @@ ruby '2.6.3'
 gem 'rails', '5.2.4.6'
 # Provide Haml generators for rails
 gem 'haml-rails', '~> 1.0'
+# Render Markdown as HTML
+gem 'kramdown', '2.1.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.3'
 # Use Uglifier as compressor for JavaScript assets
