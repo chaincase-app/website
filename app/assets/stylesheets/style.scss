@@ -32,13 +32,21 @@ html, body {
   padding: 0 9999rem;
 }
 
+header {
+  @include full-width-bar;
+  background: $royal-purple;
+  color: $off-white;
+  overflow: auto;
+  box-sizing: border-box;
+  background: $royal-purple;
+}
+
 .intro {
   @include full-width-bar;
   background: $royal-purple;
   color: $off-white;
   overflow: auto;
   box-sizing: border-box;
-  min-height: 100vh;
 
   .button {
     color: $off-white;
