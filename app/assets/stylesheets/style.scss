@@ -369,6 +369,9 @@ $mobile-font-size: 16px;
 .brand {
   /* same size as h4 */
   font-size: $base-font-size * pow($heading-scale, 2);
+  a {
+    text-decoration: none;
+  }
 }
 
 .tagline {

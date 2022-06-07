@@ -1,8 +1,5 @@
-%header.intro
-  %div.intro__title
-    = link_to image_tag( 'chaincase-mark-white.svg'), '#'
-    %h1
-      Chaincase
+= render 'layouts/header'
 %article
   %section
     = render @essay 
+= render 'layouts/email-form'

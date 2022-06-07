@@ -1,0 +1,27 @@
+%section.subscribe.emailoctopus-form-wrapper.emailoctopus-form-default.null
+  %h4.emailoctopus-heading
+    Go
+    %span.royal-purple private
+    before anyone else.
+  %p.emailoctopus-success-message
+  %p.emailoctopus-error-message
+  %form.emailoctopus-form{:action => "https://emailoctopus.com/lists/f0814c6a-30ea-11eb-a3d0-06b4694bee2a/members/embedded/1.3s/add", "data-message-bot-submission-error" => "This doesn't look like a human submission.", "data-message-consent-required" => "Please check the checkbox to indicate your consent.", "data-message-invalid-email-address" => "Your email address looks incorrect, please try again.", "data-message-invalid-parameters-error" => "This form has missing or invalid fields.", "data-message-missing-email-address" => "Your email address is required.", "data-message-success" => "Updates coming your way!", "data-message-unknown-error" => "Sorry, an unknown error has occurred. Please try again later.", "data-sitekey" => "6LdYsmsUAAAAAPXVTt-ovRsPIJ_IVhvYBBhGvRV6", :method => "post"}
+    .emailoctopus-form-row
+      %label{:for => "field_0"}
+        Enter your email to stay tuned
+      %input#field_0{:name => "field_0", :placeholder => "hi@chaincase.app", :required => "required", :type => "email"}/
+    .emailoctopus-form-row
+      %label{:for => "field_1"}
+        And your name so we can address you
+      %input#field_1{:name => "field_1", :placeholder => "Satoshi", :type => "text"}/
+    .emailoctopus-form-row-hp{"aria-hidden" => "true"}
+      %input{:autocomplete => "nope", :name => "hpc4b27b6e-eb38-11e9-be00-06b4694bee2a", :tabindex => "-1", :type => "text"}/
+    .emailoctopus-form-row-subscribe
+      %input{:name => "successRedirectUrl", :type => "hidden"}/
+      %input{type: "submit", value: "Get Access", "data-disable-with" => "Get Access"}
+
+%script{:src => "https://emailoctopus.com/bundles/emailoctopuslist/js/1.6/form-recaptcha.js"}
+  :cdata
+%script{:src => "https://emailoctopus.com/bundles/emailoctopuslist/js/1.6/form-embed.js"}
+  :cdata
+
