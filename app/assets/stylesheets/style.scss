@@ -41,6 +41,29 @@ header {
   background: $royal-purple;
 }
 
+article {
+  max-width: 740px;
+  line-height: 1.5;
+  font-kerning: normal;
+
+  * {
+    margin-bottom: 1rem * $line-height;
+  }
+
+  a {
+    text-decoration: none;
+    color: $royal-purple;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+}
+
+.by-line {
+  opacity: .5;
+}
+
 .intro {
   @include full-width-bar;
   background: $royal-purple;
@@ -318,6 +341,7 @@ li {
 
 // Set heading size using modular scale
 $heading-scale: 1.44;
+$mobile-heading-scale: 1.1;
 $mobile-font-size: 16px;
 
 @function pow($number, $exponent) {
@@ -335,6 +359,10 @@ $mobile-font-size: 16px;
 @for $i from 1 through 6 {
   h#{$i} {
     font-size: $base-font-size * pow($heading-scale, (6 - $i));
+  }
+
+  article h#{$i} {
+    font-size: $base-font-size * pow($mobile-heading-scale, (6 - $i));
   }
 }
 
@@ -395,7 +423,6 @@ a:hover {
 
 
 @media screen and (max-width: 800px) {
-  $mobile-heading-scale: 1.1;
   $mobile-font-size: 16px;
 
   .bullets {
