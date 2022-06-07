@@ -1,3 +1,5 @@
+<% provide(:title, 'What do you mean 👋 Unlink Bitcoin 👋') %>
+
 # What do you mean 👋 Unlink Bitcoin 👋
 
 ## And Maybe Stop Waiving your Hands?
