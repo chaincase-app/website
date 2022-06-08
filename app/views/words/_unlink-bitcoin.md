@@ -2,7 +2,7 @@
 
 # What do you mean 👋 Unlink Bitcoin 👋
 
-## And Maybe Stop Waiving your Hands?
+## Why make deterministic links at all?
 
 <span class="by-line">by Dan Gould</span>
 
