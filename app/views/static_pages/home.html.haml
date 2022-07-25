@@ -3,11 +3,10 @@
     = render 'layouts/header'
     %div.intro__details
       %h1 Tired of being tracked on&nbsp;Bitcoin? We&nbsp;can&nbsp;help.
-      %h2.tagline Get seamless privacy protection on iOS with one download
-      %form{ action: 'https://testflight.apple.com/join/jBN5i0b1', target: '_blank' } 
+      %h2.tagline Stay tuned for seamless privacy protection
+      %form{ action: '#stay-tuned' } 
 
-        %input{type: "submit", value: "Try private bitcoin 📲  on TestFlight"}
-    
+        %input{type: "submit", value: "Count me in 👇🎟"}
 
       %div.bullets
         %div.bullet
@@ -22,7 +21,7 @@
     .intro__footer
       #{link_to image_tag('hrf-logo.svg', title:"Human Rights Foundation", alt: "Human Rights Foundation logo", id: "hrf-logo"), 'https://hrf.org/hrfs-bitcoin-development-fund-announces-375-million-satoshis-across-10-q3-gifts/', target: :_blank}
       %p
-        #{link_to "👆 HRF's Bitcoin Development Fund gave us a gift 🎉", 'https://hrf.org/hrfs-bitcoin-development-fund-announces-375-million-satoshis-across-10-q3-gifts/', target: :_blank, style: "text-decoration: none;"}
+        #{link_to "👆 HRF's Bitcoin Development Fund gave us a gift for PayJoin 🎉", 'https://hrf.org/hrfs-bitcoin-development-fund-announces-375-million-satoshis-across-10-q3-gifts/', target: :_blank, style: "text-decoration: none;"}
 
 %section.copy
   %h3
@@ -41,4 +40,5 @@
     Networking
   %p All network traffic is encrypted and travels through #{link_to "Tor", "https://en.wikipedia.org/wiki/Tor_(anonymity_network)", target: :_blank}. <br/> Snoops on your network don't even know you use bitcoin.
 
+%a#stay-tuned
 = render 'layouts/email-form'
