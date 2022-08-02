@@ -4,11 +4,11 @@
 
 <span class="by-line">by Dan Gould · 2022-08-01</span>
 
-In 2022 we're keeping laser-eyes focus on the problem Chaincase set out to solve: Commerce is getting captured by surveillance.
+In 2022 we're keeping laser-eyes focus on the problem Chaincase set out to solve: commerce is getting captured by surveillance.
 
-In the hundreds of conversations with enthusiastic iOS Beta users, we discovered the fundamental bottlenecks on bitcoin privacy. Having an iOS app is not one of them. Early adopters, we thank you sincerely. Your feedback is shaping the bright future of bitcoin privacy.
+In hundreds of conversations with enthusiastic iOS Beta users, we discovered what we believe to be the fundamental bottlenecks on bitcoin privacy. Having an iOS app is not one of them. Early adopters, we thank you sincerely. Your feedback is shaping the bright future of bitcoin privacy.
 
-Since the our most promising opportunity to solve the surveillance problem lies outside the iOS app we've decided to shut it down. The Chaincase iOS Beta will expire on November 1, 2022. Funds must be moved before then. Chaincase support will be available on telegram at [t.me/chaincase](https://t.me/chaincase) to facilitate the transition. We are excited to share bitcoin tech that plugs into popular software so that everyone has access to better privacy. Stay tuned.
+Since the most promising opportunity to solve the surveillance problem lies outside of iOS, we've decided to shut the app down. The Chaincase iOS Beta will expire on November 1, 2022. Funds must be moved before then. Chaincase support will be available on telegram at [t.me/chaincase](https://t.me/chaincase) to facilitate the transition. We are excited to share bitcoin tech that plugs into popular software so that everyone has access to better privacy. Stay tuned.
 
 ## Export Options
 
