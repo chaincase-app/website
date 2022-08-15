@@ -4,7 +4,7 @@
 
 <span class="by-line">by Dan Gould</span>
 
-<%= image_tag("lightning-behind-shutters.jpg", alt: "lightning bolts contained by privacy shutters")  %>
+<%= image_tag("lightning-striking-surveilled-bitcoins.jpg", alt: "“Two bolts of lightning striking a CCTV surveillance camera above an open tresure chest full of bitcoins, cgsociety artstation trending 4k”")  %>
 
 The Lightning Network and [Pay-to-Endpoint (P2EP)](https://bitcoinmagazine.com/culture/blockchain-analysis-about-get-harder-p2ep-enters-testing-phase) PayJoin both let two bitcoin peers interact to transact. Interactive transactions help both parties preserve their privacy and save money. Together, they can break common identifying patterns of use. They can share chain space by communicating rather than communicate by using chain space. PayJoin is the fundamental interactive transaction, set out to break common blockchain surveillance heuristics. Lightning makes instant payments possible through a network of peer to peer payment channels. Funny nobody connected these together. It's easy to do.
 
