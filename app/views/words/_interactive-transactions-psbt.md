@@ -1,6 +1,6 @@
 <% provide(:title, 'Interactive Transactions with PSBT') %>
 
-# Iterative Partial Transactions with PSBT
+# Iterative Transactions with PSBT
 
 <span class="by-line">by Dan Gould</span>
 
