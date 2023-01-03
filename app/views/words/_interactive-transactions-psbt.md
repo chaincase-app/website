@@ -4,7 +4,7 @@
 
 <span class="by-line">by Dan Gould</span>
 
-Partially signed bitcoin transaction (PSBT) is a data format for interactive transactions. Want to sign using an airgapped device that’s never on the internet and broadcast from your laptop? Use PSBT. Need to get signatures from multiple signers in a multisig? PSBT. Writing software for PayJoin or CoinJoin? Again, you want PSBT. Since what we do with transactions has evolved, so has the format. The following is a brief history and future hopes for our best transaction format friend.
+Partially signed bitcoin transaction ([PSBT](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki)) is a data format for interactive transactions. Want to sign using an airgapped device that’s never on the internet and broadcast from your laptop? Use PSBT. Need to get signatures from multiple signers in a multisig? PSBT. Writing software for PayJoin or CoinJoin? Again, you want PSBT. Since what we do with transactions has evolved, so has the format. The following is a brief history and future hopes for our best transaction format friend.
 
 <figure>
    <%= image_tag("psbt-scaffold.jpg", alt: "lightning bolts contained by privacy shutters")  %>
@@ -21,7 +21,7 @@ While PSBTv0 makes simple cold storage standard, it struggles to do anything mor
 
 ## Enter Version 2
 
-PSBTv2 removes the fixed raw transaction and replaces it with a key-value map for every piece of data it managed. It also introduces "transaction modifiable flags" to track when state changes are allowed. Unlike the raw transaction format, this design facilitates input and output changes.
+[PSBTv2](https://github.com/bitcoin/bips/blob/master/bip-0370.mediawiki) removes the fixed raw transaction and replaces it with a key-value map for every piece of data it managed. It also introduces "transaction modifiable flags" to track when state changes are allowed. Unlike the raw transaction format, this design facilitates input and output changes.
 
 With PSBTv2, Lightning PayJoin becomes just a few key-value pair updates. Just replace a specified output map with a substitute. The data is all neat in one place. After the output substitution, the PSBT's "outputs modifiable flag" is set to false to signal no more mutation and allow only signing thereafter. All of this construction can be handled by a PSBTv2-specified constructor role since thanks to explicit state and complete maps. The one role replaces the version 0 combiner, updater, and input finalizer roles with their siloed and paranoid validation. Once signers sign, a transaction extractor may extract a complete raw transaction from the data in the maps alone.
 
