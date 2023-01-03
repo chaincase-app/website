@@ -1,14 +1,14 @@
 <% provide(:title, 'Interactive Transactions with PSBT') %>
 
-# Iterative Transactions with PSBT
+# Interactive Transactions with PSBT
 
 <span class="by-line">by Dan Gould</span>
 
 Partially signed bitcoin transaction (PSBT) is a data format for interactive transactions. Want to sign using an airgapped device that’s never on the internet and broadcast from your laptop? Use PSBT. Need to get signatures from multiple signers in a multisig? PSBT. Writing software for PayJoin or CoinJoin? Again, you want PSBT. Since what we do with transactions has evolved, so has the format. The following is a brief history and future hopes for our best transaction format friend.
 
 <figure>
-   <%= image_tag("psbt-scaffold.jpeg", alt: "lightning bolts contained by privacy shutters")  %>
-   <figcaption>"Workers constructing a bamboo scaffold cantilevered over a busy Hong Kong street" by Greg Hume, licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA 3.0</a>. "PSBT sign edit by Dan Gould using DALL·E 2.</figcaption>
+   <%= image_tag("psbt-scaffold.jpg", alt: "lightning bolts contained by privacy shutters")  %>
+   <figcaption>"Workers constructing a bamboo scaffold cantilevered over a busy Hong Kong street" by Greg Hume, licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA 3.0</a>. "PSBT" sign edit by Dan Gould using DALL·E 2.</figcaption>
 </figure>
 
 The version 0 (there is no version 1) PSBT data format includes a global unsigned raw transaction. The raw transaction format was hacked together for efficient verification, not mutation. PSBTv0 augments it specifically to mutate between partially signed states.
