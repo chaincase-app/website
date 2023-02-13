@@ -19,6 +19,8 @@ gem 'puma', '~> 4.3'
 gem 'uglifier', '>= 1.3.0'
 # Use SCSS for stylesheets
 gem 'sassc-rails', '2.1.0'
+# Use meta tags for previews
+gem 'meta-tags', '2.18.0'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
