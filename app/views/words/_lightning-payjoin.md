@@ -1,4 +1,5 @@
 <% provide(:title, 'Lightning Powered PayJoin') %>
+<% set_meta_tags title: 'Lightning Powered PayJoin', description: 'Privacy preserving channel opening batches', og: { image: image_tag("lightning-striking-surveilled-bitcoins.jpg", alt: "lightning bolts contained by privacy shutters") } %>
 
 # Lightning Powered PayJoin
 

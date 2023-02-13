@@ -1,4 +1,5 @@
 <% provide(:title, 'Interactive Transactions with PSBT') %>
+<% set_meta_tags title: 'Interactive Transactions with PSBT', description: 'PSBT history and the forecast for PSBT2', og: { image: image_tag("psbt-scaffold.jpg", alt: "lightning bolts contained by privacy shutters") } %>
 
 # Interactive Transactions with PSBT
 
