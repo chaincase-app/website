@@ -1,7 +1,7 @@
 # A Better Payjoin Design Flow
 
 <% provide(:title, 'A Better Payjoin Design Flow') %>
-<% set_meta_tags title: 'A Better Payjoin Design Flow', description: 'Reflections on the Yashraj apropach to private payments', og: { image: image_url('payjoin-challenge-design-flow-yashraj.png') } %>
+<% set_meta_tags title: 'A Better Payjoin Design Flow', description: 'Reflections on the Yashraj approach to private payments', og: { image: image_url('payjoin-challenge-design-flow-yashraj.png') } %>
 
 <span class="by-line">by Dan Gould</span>
 
