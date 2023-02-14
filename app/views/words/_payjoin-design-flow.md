@@ -1,11 +1,11 @@
 # A Better Payjoin Design Flow
 
 <% provide(:title, 'A Better Payjoin Design Flow') %>
-<% set_meta_tags title: 'A Better Payjoin Design Flow', description: 'Reflecting on the way Yashraj Deshmukh overcame the private payment design challenge.', og: { image: image_url('payjoin-challenge-design-flow-yashraj-deshmukh.png') } %>
+<% set_meta_tags title: 'A Better Payjoin Design Flow', description: 'Reflecions on the Yashraj Deshmukh apropach to private payments', og: { image: image_url('payjoin-challenge-design-flow-yashraj-deshmukh.png') } %>
 
 <span class="by-line">by Dan Gould</span>
 
-Yashraj Deshmukh took a swing at the private purchase bitcoin design challenge and <a href="https://docs.google.com/document/d/16HmzGnI1620W5HqFGw2KhjqytLzByBwD4uXMKW3RFxQ/edit" target="_blank">knocked it out of the park</a>. Not only did he design a flow to make payjoin a default privacy upgrade, he identified the key areas it should improve and continues to push for their evolution. He keeps finding new edge and we can't wait to see what comes next.
+Yashraj Deshmukh took a swing at the private purchase bitcoin design challenge and <a href="https://docs.google.com/document/d/16HmzGnI1620W5HqFGw2KhjqytLzByBwD4uXMKW3RFxQ/edit" target="_blank">knocked it out of the park</a>. Not only did he design a flow to make payjoin a default privacy upgrade, he identified the key areas it should improve and continues to push for their evolution. He keeps finding new edge and I can't wait to see what comes next.
 
 > Bob wants to buy an engagement ring to surprise Alice. He has to pay on-chain because it's a large expense. Alice recently sent him sats, so she has a view into the sats in Bob's wallet. Design a low-fidelity flow Bob might follow to spend his sats using PayJoin2. In contrast to a naïve transaction, thanks to PayJoin, even if Alice sees the resulting transaction on-chain she won't be able to discern whether it is a small transfer, output consolidation, or the large purchase that would spoil the surprise.
 >
@@ -25,7 +25,7 @@ Because payjoin is built on on bitcoin uri and basic http, so long as both parti
 
 <figure>
    <%= image_tag("payjoin-challenge-design-flow-yashraj-deshmukh.png", alt: "Yashraj's Deskmukh's proposed payjoin UI flow")  %>
-   <figcaption>Yashraj's proposed payjoin UI flow'</figcaption>
+   <figcaption>Yashraj's proposed payjoin UI flow</figcaption>
 </figure>
 
 ## Limitations for Bob, the Sender
